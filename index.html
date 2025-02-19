@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TalkPlay: Multimodal Music Recommendation with Large Language Models</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="helper-v2.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+      <div class="text-center">
+        <h1 class="title is-1 publication-title">TalkPlay: Multimodal Music Recommendation <br> with Large Language Models</h1>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">Seungheon Doh, Keunwoo Choi, Juhan Nam</span>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">KAIST, South Korea. <br> talkpl.ai, New York, USA.</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- Remove or comment out personal links for anonymous submission -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+      <h3>Abstract</h3>
+      <div class="container pt-3">
+        <div class="content has-text-justified">
+          <p>
+            We present TalkPlay, a multimodal music recommendation system that reformulates the recommendation task as large language model token generation. TalkPlay represents music through an expanded token vocabulary that encodes multiple modalities - audio, lyrics, metadata, semantic tags, and playlist co-occurrence. Using these rich representations, the model learns to generate recommendations through next-token prediction on music recommendation conversations, that requires learning the associations natural language query and response, as well as music items. In other words, the formulation transforms music recommendation into a natural language understanding task, where the model's ability to predict conversation tokens directly optimizes query-item relevance. Our approach eliminates traditional recommendation-dialogue pipeline complexity, enabling end-to-end learning of query-aware music recommendations. In the experiment, TalkPlay is successfully trained and outperforms baseline methods in various aspects, demonstrating strong context understanding as a conversational music recommender.
+          </p>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <img src="./static/images/main.png" class="img-fluid" alt="TalkPlay system overview" style="width: 70%; display: block; margin: 0 auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+      <h3>Short Conversation Example</h3>
+      <p>All examples are from the test set, which was not used during training.</p>
+      <div class="container pt-3">
+        <div id="short-chats-wrapper">
+          <ul class="pagination justify-content-center">
+            <li class="page-item active">
+              <a id="short-conversation-0" class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a id="short-conversation-1" class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a id="short-conversation-2" class="page-link" href="#">3</a>
+            </li>
+          </ul>
+          <div class="chat-section">
+            <div class="chat-container" id="short-container-1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+      <h3>Long Conversation Example</h3>
+      <p>All examples are from the test set, which was not used during training.</p>
+      <div class="container pt-3">
+        <div id="chats-wrapper">
+          <ul class="pagination justify-content-center">
+            <li class="page-item active">
+              <a id="long-conversation-0" class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a id="long-conversation-1" class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a id="long-conversation-2" class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+              <a id="long-conversation-3" class="page-link" href="#">4</a>
+            </li>
+          </ul>
+          <div class="chat-section">
+            <div class="chat-container" id="chat-container-1"></div>
+          </div>
+        </div>
+      </div>
+    <p>This demo page is inspired by <a href="https://google-research.github.io/seanet/musiclm/examples/" target="_blank">MusicLM's demo page</a>.</p>
+    </div>
+
+    <script src="./static/example/short.js"></script>
+    <script src="./static/example/long.js"></script>
+    <script>
+      function renderChat(exampleData, containerId) {
+        const chatContainer = document.getElementById(containerId);
+        chatContainer.innerHTML = ''; // Clear existing content
+        
+        const pidHeader = document.createElement('h5');
+        pidHeader.textContent = `Input: Chat History (Left: User, Right: Assistant)`;
+        pidHeader.style.padding = '10px';
+        chatContainer.appendChild(pidHeader);
+
+        exampleData.input.forEach(message => {
+          const messageContainer = document.createElement('div');
+          messageContainer.className = 'message-container';
+          
+          const messageDiv = document.createElement('div');
+          messageDiv.className = `message ${message.role}-message`;
+          
+          // Handle different music content format
+          if (message.role === 'music') {
+            const musicContent = message.content;
+            // Add title and artist
+            messageDiv.innerHTML = `<div class="music-title">${musicContent.title} - ${musicContent.artist} <span class="text-small-gray">(${musicContent.track_id})</span> </div>`;
+            
+            // Add tags
+            if (musicContent.tag_list && musicContent.tag_list.length > 0) {
+              const tagsDiv = document.createElement('div');
+              tagsDiv.className = 'tag-list';
+              // Filter out tags longer than 20 characters
+              const filteredTags = musicContent.tag_list.filter(tag => tag.length <= 10);
+              const tags = filteredTags.slice(0, 5); // Show only first 5 tags
+              tagsDiv.innerHTML = tags.map(tag => `<span class="tag">${tag}</span>`).join(' ');
+              if (filteredTags.length > 5) {
+                const moreTag = document.createElement('span');
+                moreTag.className = 'tag more-tag';
+                moreTag.textContent = `+${filteredTags.length - 5} more`;
+                tagsDiv.appendChild(moreTag);
+              }
+              messageDiv.appendChild(tagsDiv);
+            }
+
+            // Add audio player
+            if (musicContent.audio_path) {
+              const audio = document.createElement('audio');
+              audio.controls = true;
+              audio.src = musicContent.audio_path;
+              // Prevent download and other controls
+              audio.controlsList = "nodownload noplaybackrate";
+              // Disable keyboard controls
+              audio.addEventListener('keydown', (e) => e.preventDefault());
+              messageDiv.appendChild(audio);
+            }
+          } else {
+            messageDiv.textContent = message.content;
+          }
+          
+          messageContainer.appendChild(messageDiv);
+          chatContainer.appendChild(messageContainer);
+        });
+
+        // Add section headers for ground truth and prediction
+        const comparisonContainer = document.createElement('div');
+        comparisonContainer.className = 'comparison-container mt-4';
+        
+        // Add divider line
+        const divider = document.createElement('hr');
+        divider.className = 'section-divider';
+        chatContainer.appendChild(divider);
+        
+        // Create two columns for ground truth and prediction
+        const row = document.createElement('div');
+        row.className = 'row';
+        
+        // Ground Truth Column
+        const gtCol = document.createElement('div');
+        gtCol.className = 'col-md-6';
+        const gtHeader = document.createElement('h5');
+        gtHeader.textContent = 'Ground Truth';
+        gtCol.appendChild(gtHeader);
+        
+        exampleData.ground_truth.forEach(message => {
+          const messageContainer = document.createElement('div');
+          messageContainer.className = 'message-container';
+          
+          const messageDiv = document.createElement('div');
+          messageDiv.className = `message ${message.role}-message ground-truth`;
+          
+          // Handle different music content format
+          if (message.role === 'music') {
+            const musicContent = message.content;
+            messageDiv.innerHTML = `<div class="music-title">${musicContent.title} - ${musicContent.artist} <span class="text-small-gray">(${musicContent.track_id})</span> </div>`;
+            
+            // Add tags
+            if (musicContent.tag_list && musicContent.tag_list.length > 0) {
+              const tagsDiv = document.createElement('div');
+              tagsDiv.className = 'tag-list';
+              // Filter out tags longer than 20 characters
+              const filteredTags = musicContent.tag_list.filter(tag => tag.length <= 20);
+              const tags = filteredTags.slice(0, 5); // Show only first 5 tags
+              tagsDiv.innerHTML = tags.map(tag => `<span class="tag">${tag}</span>`).join(' ');
+              if (filteredTags.length > 5) {
+                const moreTag = document.createElement('span');
+                moreTag.className = 'tag more-tag';
+                moreTag.textContent = `+${filteredTags.length - 5} more`;
+                tagsDiv.appendChild(moreTag);
+              }
+              messageDiv.appendChild(tagsDiv);
+            }
+
+            if (musicContent.audio_path) {
+              const audio = document.createElement('audio');
+              audio.controls = true;
+              audio.src = musicContent.audio_path;
+              // Prevent download and other controls
+              audio.controlsList = "nodownload noplaybackrate";
+              // Disable keyboard controls
+              audio.addEventListener('keydown', (e) => e.preventDefault());
+              messageDiv.appendChild(audio);
+            }
+          } else {
+            messageDiv.textContent = message.content;
+          }
+          
+          messageContainer.appendChild(messageDiv);
+          gtCol.appendChild(messageContainer);
+        });
+        
+        // Prediction Column
+        const predCol = document.createElement('div');
+        predCol.className = 'col-md-6';
+
+        const predHeader = document.createElement('h5');
+        predHeader.textContent = 'Prediction';
+        predCol.appendChild(predHeader);
+        
+        exampleData.prediction.forEach(message => {
+          const messageContainer = document.createElement('div');
+          messageContainer.className = 'message-container';
+          
+          const messageDiv = document.createElement('div');
+          messageDiv.className = `message ${message.role}-message prediction`;
+          
+          // Handle different music content format
+          if (message.role === 'music') {
+            const musicContent = message.content;
+            messageDiv.innerHTML = `<div class="music-title">${musicContent.title} - ${musicContent.artist} <span class="text-small-gray">(${musicContent.track_id})</span> </div>`;
+            
+            // Add tags
+            if (musicContent.tag_list && musicContent.tag_list.length > 0) {
+              const tagsDiv = document.createElement('div');
+              tagsDiv.className = 'tag-list';
+              // Filter out tags longer than 20 characters
+              const filteredTags = musicContent.tag_list.filter(tag => tag.length <= 10);
+              const tags = filteredTags.slice(0, 5); // Show only first 5 tags
+              tagsDiv.innerHTML = tags.map(tag => `<span class="tag">${tag}</span>`).join(' ');
+              if (filteredTags.length > 5) {
+                const moreTag = document.createElement('span');
+                moreTag.className = 'tag more-tag';
+                moreTag.textContent = `+${filteredTags.length - 5} more`;
+                tagsDiv.appendChild(moreTag);
+              }
+              messageDiv.appendChild(tagsDiv);
+            }
+
+            if (musicContent.audio_path) {
+              const audio = document.createElement('audio');
+              audio.controls = true;
+              audio.src = musicContent.audio_path;
+              // Prevent download and other controls
+              audio.controlsList = "nodownload noplaybackrate";
+              // Disable keyboard controls
+              audio.addEventListener('keydown', (e) => e.preventDefault());
+              messageDiv.appendChild(audio);
+            }
+          } else {
+            messageDiv.textContent = message.content;
+          }
+          
+          messageContainer.appendChild(messageDiv);
+          predCol.appendChild(messageContainer);
+        });
+        
+        row.appendChild(gtCol);
+        row.appendChild(predCol);
+        comparisonContainer.appendChild(row);
+        chatContainer.appendChild(comparisonContainer);
+      }
+
+      function switchShortPage(pageNumber) {
+        document.querySelectorAll('#short-chats-wrapper .page-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // 0-based index for array access, but display 1-based index
+        const shortPageNumber = pageNumber - 1;
+        document.querySelector(`#short-conversation-${shortPageNumber}`).parentElement.classList.add('active');
+        
+        const example = eval(`short_${shortPageNumber}`);
+        renderChat(example, 'short-container-1');
+      }
+
+      function switchLongPage(pageNumber) {
+        document.querySelectorAll('#chats-wrapper .page-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // 0-based index for array access, but display 1-based index
+        const longPageNumber = pageNumber - 1;
+        document.querySelector(`#long-conversation-${longPageNumber}`).parentElement.classList.add('active');
+        
+        const example = eval(`long_${longPageNumber}`);
+        renderChat(example, 'chat-container-1');
+      }
+
+      // Initial load
+      function loadAndRenderChats() {
+        try {
+          // Render initial long conversation with index 0
+          renderChat(long_0, 'chat-container-1');
+          
+          // Render initial short conversation with index 0
+          renderChat(short_0, 'short-container-1');
+          
+          // Add click event listeners to long conversation pagination
+          document.querySelectorAll('#chats-wrapper .page-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const pageNumber = parseInt(e.target.textContent);  // 1-based index from display
+              switchLongPage(pageNumber);
+            });
+          });
+
+          // Add click event listeners to short conversation pagination
+          document.querySelectorAll('#short-chats-wrapper .page-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const pageNumber = parseInt(e.target.textContent);  // 1-based index from display
+              switchShortPage(pageNumber);
+            });
+          });
+        } catch (error) {
+          console.error('Error loading chat data:', error);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', loadAndRenderChats);
+    </script>
+
+  </body>
+</html>

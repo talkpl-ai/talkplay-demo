@@ -1,0 +1,165 @@
+td {
+  vertical-align: middle;
+}
+
+audio {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: unset !important;
+}
+
+.timestamp-label {
+  color: gray;
+}
+
+table.wide-audio audio {
+  width: 40vw;
+  max-width: 40vw;
+}
+
+.chat-container {
+  max-width: 800px;
+  margin: 0px auto;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 70%;
+  clear: both;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+}
+
+.user-message {
+  float: left;
+  background-color: white;
+}
+
+.assistant-message {
+  float: right;
+}
+
+.music-message {
+  float: right;
+  font-family: monospace;
+}
+
+/* Ground truth와 prediction 섹션의 메시지들도 동일하게 적용 */
+.ground-truth .assistant-message,
+.ground-truth .music-message,
+.prediction .assistant-message,
+.prediction .music-message {
+  float: right;
+}
+
+.ground-truth .user-message,
+.prediction .user-message {
+  float: left;
+}
+
+.message-container {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* Highlight last assistant and music messages */
+.message-container:nth-last-of-type(1) .music-message,
+.message-container:nth-last-of-type(2) .assistant-message {
+  background-color: #e8f5e9;
+  border: 1px solid #c8e6c9;
+}
+
+.chat-section {
+  margin: 40px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.chat-title {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.comparison-container {
+  /* border-top: 2px solid #eee; */
+  padding-top: 20px;
+  /* margin: 0 -10px; */
+}
+
+.ground-truth {
+  border: 2px solid #af9d4c;
+}
+
+.prediction {
+  border: 2px solid #2196F3;
+}
+
+h5 {
+  color: #666;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.col-md-6 {
+  padding: 0 15px;
+}
+
+.col-md-6 + .col-md-6 {
+  border-left: 1px solid #eee;
+  padding-left: 30px;
+}
+
+/* Ground Truth와 Prediction 섹션의 메시지 너비 확장 */
+.ground-truth.message,
+.prediction.message {
+  max-width: 100%;
+}
+
+.tag-list {
+  margin: 8px 0;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e9ecef;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin: 2px;
+  color: #666;
+}
+
+.more-tag {
+  background-color: #dee2e6;
+  color: #495057;
+}
+
+.music-title {
+  margin-bottom: 8px;
+}
+
+.music-message audio {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.section-divider {
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid #dee2e6;
+  opacity: 0.8;
+}
+
+.text-small-gray {
+  font-size: 0.85em;
+  color: #6c757d;
+  display: inline-block;
+  margin: 0px;
+}
