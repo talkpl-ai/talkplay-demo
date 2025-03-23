@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>TalkPlay: Multimodal Music Recommendation with Large Language Models</title>
     <link
@@ -20,106 +20,254 @@
 
   gtag('config', 'G-172BJXXL3Q');
 </script>
+    <style>
+        /* Update navigation styles to be thinner */
+        .nav-bar {
+            background-color: white;
+            padding: 0.5rem 1rem;  /* Reduced from 1rem */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        
+        .nav-bar a {
+            color: #444;  /* Changed from #333 to slightly lighter */
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            margin: 0 0.3rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+        
+        .nav-bar a:hover {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+        
+        .nav-bar a.active {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+
+        /* Update content margin to match thinner navbar */
+        .content {
+            margin-top: 50px;  /* Reduced from 70px */
+            padding: 20px;
+        }
+        
+        /* Blog list styles */
+        .blog-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .blog-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .blog-item img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        /* Demo section */
+        #demo-section {
+            display: block;
+        }
+        
+        /* Blog post styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #444;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            color: #000;
+        }
+        
+        .markdown-content {
+            line-height: 1.6;
+        }
+        
+        .markdown-content h1 {
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content ul {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
-    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-      <div class="text-center">
-        <h1 class="title is-1 publication-title">TalkPlay: Multimodal Music Recommendation <br> with Large Language Models</h1>        
-
-        <div class="is-size-5 publication-authors">
-          <span class="author-block">Seungheon Doh<sup>*,1,2</sup>, Keunwoo Choi<sup>*,2</sup>, Juhan Nam<sup>1</sup></span>
-        </div>
-
-        <div class="is-size-5 publication-authors">
-          <span class="author-block" style="font-size: 1em">
-            KAIST<sup>1</sup>,  talkpl.ai<sup>2</sup>
-          </span>
-          <br>
-          <span class="author-block" style="font-size: 0.8em; color: gray">
-            * Equal contribution
-          </span>
-        </div>
-
-        <div class="column has-text-centered">
-          <div class="publication-links">
-            <br>
-            <b><a href="https://arxiv.org/abs/2502.13713" target="_blank">ArXiv</a> | <a href="https://huggingface.co/datasets/talkpl-ai/talkplay-db-v1" target="_blank">Dataset</a></b> 
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-      <h3>Abstract</h3>
-      <div class="container pt-3">
-        <div class="content has-text-justified">
-          <p>
-            We present TalkPlay, a multimodal music recommendation system that reformulates the recommendation task as large language model token generation. TalkPlay represents music through an expanded token vocabulary that encodes multiple modalities - audio, lyrics, metadata, semantic tags, and playlist co-occurrence. Using these rich representations, the model learns to generate recommendations through next-token prediction on music recommendation conversations, that requires learning the associations natural language query and response, as well as music items. In other words, the formulation transforms music recommendation into a natural language understanding task, where the model's ability to predict conversation tokens directly optimizes query-item relevance. Our approach eliminates traditional recommendation-dialogue pipeline complexity, enabling end-to-end learning of query-aware music recommendations. In the experiment, TalkPlay is successfully trained and outperforms baseline methods in various aspects, demonstrating strong context understanding as a conversational music recommender.
-          </p>
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <img src="./static/images/main.png" class="img-fluid" alt="TalkPlay system overview" style="width: 80%; display: block; margin: 0 auto;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-      <h3>Short Conversation Example</h3>
-      <p>All examples are from the test set, which was not used during training.</p>
-      <div class="container pt-3">
-        <div id="short-chats-wrapper">
-          <ul class="pagination justify-content-center">
-            <li class="page-item active">
-              <a id="short-conversation-0" class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a id="short-conversation-1" class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a id="short-conversation-2" class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a id="short-conversation-3" class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-              <a id="short-conversation-4" class="page-link" href="#">5</a>
-            </li>
-          </ul>
-          <div class="chat-section">
-            <div class="chat-container" id="short-container-1"></div>
-          </div>
-        </div>
-      </div>
+    <div class="nav-bar">
+        <a href="#demo" id="demo-nav" class="active">Demo</a>
+        <a href="#blog" id="blog-nav">Blog</a>
+        <a href="#team" id="team-nav">Team</a>
     </div>
     
-    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-      <h3>Long Conversation Example</h3>
-      <p>All examples are from the test set, which was not used during training.</p>
-      <div class="container pt-3">
-        <div id="chats-wrapper">
-          <ul class="pagination justify-content-center">
-            <li class="page-item active">
-              <a id="long-conversation-0" class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a id="long-conversation-1" class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a id="long-conversation-2" class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a id="long-conversation-3" class="page-link" href="#">4</a>
-            </li>
-          </ul>
-          <div class="chat-section">
-            <div class="chat-container" id="chat-container-1"></div>
-          </div>
+    <div class="content">
+        <div id="demo-section">
+            <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+                <div class="text-center">
+                    <h1 class="title is-1 publication-title">TalkPlay: Multimodal Music Recommendation <br> with Large Language Models</h1>        
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">Seungheon Doh<sup>*,1,2</sup>, Keunwoo Choi<sup>*,2</sup>, Juhan Nam<sup>1</sup></span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block" style="font-size: 1em">
+                            KAIST<sup>1</sup>,  talkpl.ai<sup>2</sup>
+                        </span>
+                        <br>
+                        <span class="author-block" style="font-size: 0.8em; color: gray">
+                            * Equal contribution
+                        </span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <br>
+                            <b><a href="https://arxiv.org/abs/2502.13713" target="_blank">ArXiv</a> | <a href="https://huggingface.co/datasets/talkpl-ai/talkplay-db-v1" target="_blank">Dataset</a></b> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+                <h3>Abstract</h3>
+                <div class="container pt-3">
+                    <div class="content has-text-justified">
+                        <p>
+                            We present TalkPlay, a multimodal music recommendation system that reformulates the recommendation task as large language model token generation. TalkPlay represents music through an expanded token vocabulary that encodes multiple modalities - audio, lyrics, metadata, semantic tags, and playlist co-occurrence. Using these rich representations, the model learns to generate recommendations through next-token prediction on music recommendation conversations, that requires learning the associations natural language query and response, as well as music items. In other words, the formulation transforms music recommendation into a natural language understanding task, where the model's ability to predict conversation tokens directly optimizes query-item relevance. Our approach eliminates traditional recommendation-dialogue pipeline complexity, enabling end-to-end learning of query-aware music recommendations. In the experiment, TalkPlay is successfully trained and outperforms baseline methods in various aspects, demonstrating strong context understanding as a conversational music recommender.
+                        </p>
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <img src="./static/images/main.png" class="img-fluid" alt="TalkPlay system overview" style="width: 80%; display: block; margin: 0 auto;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+                <h3>Short Conversation Example</h3>
+                <p>All examples are from the test set, which was not used during training.</p>
+                <div class="container pt-3">
+                    <div id="short-chats-wrapper">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item active">
+                                <a id="short-conversation-0" class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a id="short-conversation-1" class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a id="short-conversation-2" class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a id="short-conversation-3" class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a id="short-conversation-4" class="page-link" href="#">5</a>
+                            </li>
+                        </ul>
+                        <div class="chat-section">
+                            <div class="chat-container" id="short-container-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+                <h3>Long Conversation Example</h3>
+                <p>All examples are from the test set, which was not used during training.</p>
+                <div class="container pt-3">
+                    <div id="chats-wrapper">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item active">
+                                <a id="long-conversation-0" class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a id="long-conversation-1" class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a id="long-conversation-2" class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a id="long-conversation-3" class="page-link" href="#">4</a>
+                            </li>
+                        </ul>
+                        <div class="chat-section">
+                            <div class="chat-container" id="chat-container-1"></div>
+                        </div>
+                    </div>
+                </div>
+            <p>This demo page is inspired by <a href="https://google-research.github.io/seanet/musiclm/examples/" target="_blank">MusicLM's demo page</a>.</p>
+            </div>
         </div>
-      </div>
-    <p>This demo page is inspired by <a href="https://google-research.github.io/seanet/musiclm/examples/" target="_blank">MusicLM's demo page</a>.</p>
+        
+        <div id="team-section" style="display: none">
+            <div class="container pt-5 shadow p-5 mb-5 bg-white rounded">
+                <div class="row mb-5">
+                    <div class="col-md-12 mb-4">
+                        <h3><a href="https://keunwoochoi.github.io/" target="_blank" style="text-decoration: none; color: inherit;">Keunwoo Choi</a></h3>
+                        <p class="text-muted">Senior Principal ML Scientist at Genentech</p>
+                        <p>Expert in music AI and large language models, with extensive industry experience in music tech and AI:</p>
+                        <ul>
+                            <li>Currently leading LLM development at Genentech</li>
+                            <li>Former Research Scientist at Spotify and ByteDance AI Lab</li>
+                            <li>Creator of Kapre (Keras Audio Preprocessing)</li>
+                            <li>Best Paper Award at ISMIR 2017</li>
+                            <li>PhD in Music AI from Queen Mary University of London</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <h3><a href="https://seungheondoh.github.io/" target="_blank" style="text-decoration: none; color: inherit;">Seungheon Doh</a></h3>
+                        <p class="text-muted">Postdoctoral Researcher at KAIST</p>
+                        <p>Specialized in connecting music with natural language and multimodal AI:</p>
+                        <ul>
+                            <li>Research focus on music-language understanding and generation</li>
+                            <li>Experience at Adobe, Chartmetric, ByteDance/TikTok</li>
+                            <li>PhD from KAIST in Music and Audio Computing</li>
+                            <li>Multiple publications on music-language models at top conferences</li>
+                            <li>Awarded KAIST post-doctoral Fellowship for LLM4Music research</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="blog-section" class="blog-list" style="display: none">
+            <!-- Blog posts will be dynamically loaded here -->
+        </div>
     </div>
 
     <script src="./static/example/short.js"></script>
@@ -368,8 +516,103 @@
         }
       }
 
-      document.addEventListener('DOMContentLoaded', loadAndRenderChats);
-    </script>
+      // Function to handle section display based on hash
+      function handleHash() {
+        const hash = window.location.hash.slice(1) || 'demo'; // Remove # and default to 'demo'
+        showSection(hash);
+      }
 
+      // Update showSection to handle browser history
+      function showSection(section) {
+        document.getElementById('demo-section').style.display = section === 'demo' ? 'block' : 'none';
+        document.getElementById('team-section').style.display = section === 'team' ? 'block' : 'none';
+        document.getElementById('blog-section').style.display = section === 'blog' ? 'block' : 'none';
+        
+        // Update active states
+        document.getElementById('demo-nav').classList.toggle('active', section === 'demo');
+        document.getElementById('team-nav').classList.toggle('active', section === 'team');
+        document.getElementById('blog-nav').classList.toggle('active', section === 'blog');
+        
+        if (section === 'blog') {
+          loadBlogPosts();
+        }
+      }
+      
+      // Update loadBlogPost to handle URLs for individual posts
+      async function loadBlogPost(filename) {
+        try {
+          const response = await fetch(`blog/${filename}`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const markdown = await response.text();
+          const blogSection = document.getElementById('blog-section');
+          
+          // Update URL without triggering hashchange
+          history.pushState(null, '', `#blog/${filename}`);
+          
+          blogSection.innerHTML = `
+            <div class="blog-post">
+                <a href="#blog" class="back-link">← Back to posts</a>
+                <div class="markdown-content">
+                    ${marked.parse(markdown)}
+                </div>
+            </div>
+          `;
+        } catch (error) {
+          console.error('Error loading blog post:', error);
+          document.getElementById('blog-section').innerHTML = '<p>Error loading blog post. Please try again later.</p>';
+        }
+      }
+
+      // Listen for hash changes
+      window.addEventListener('hashchange', handleHash);
+      
+      // Handle initial load
+      document.addEventListener('DOMContentLoaded', () => {
+        handleHash();
+        loadAndRenderChats();
+      });
+
+      // Update blog item click handler
+      function createBlogList(posts) {
+        const blogSection = document.getElementById('blog-section');
+        blogSection.innerHTML = posts.map(post => `
+          <div class="blog-item" onclick="loadBlogPost('${post.filename}')" style="cursor: pointer">
+              <h2 style="color: #444">${post.title}</h2>
+              ${post.thumbnail ? `<img src="${post.thumbnail}" alt="${post.title}">` : ''}
+              <p>${post.preview}</p>
+          </div>
+        `).join('');
+      }
+
+      // Update loadBlogPosts to handle direct URLs to posts
+      async function loadBlogPosts() {
+        try {
+          console.log('Attempting to load blog posts...');
+          const response = await fetch('blog/posts.jsonl');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const text = await response.text();
+          console.log('Loaded posts.jsonl:', text);
+          const posts = text.trim().split('\n').map(line => JSON.parse(line));
+          
+          // Check if we're trying to load a specific post
+          const hash = window.location.hash.slice(1);
+          if (hash.startsWith('blog/')) {
+            const filename = hash.slice(5);
+            await loadBlogPost(filename);
+          } else {
+            createBlogList(posts);
+          }
+        } catch (error) {
+          console.error('Detailed error loading blog posts:', error);
+          document.getElementById('blog-section').innerHTML = 
+            `<p>Error loading blog posts. Please try again later.</p>
+             <p><small>Details: ${error.message}</small></p>`;
+        }
+      }
+    </script>
   </body>
 </html>
