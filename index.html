@@ -596,7 +596,7 @@
           }
           const text = await response.text();
           console.log('Loaded posts.jsonl:', text);
-          const posts = text.trim().split('\n').map(line => JSON.parse(line));
+          const posts = JSON.parse(text);
           
           // Check if we're trying to load a specific post
           const hash = window.location.hash.slice(1);
