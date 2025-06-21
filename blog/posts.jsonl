@@ -1,4 +1,5 @@
 [
     {"title": "LLMs are the Future for Music Discovery", "filename": "2025-03-20-llms-future-music-discovery.md", "preview": "Music discovery remains a challenging problem in 2025. Here's why we're betting on LLMs to revolutionize how we find music.", "date": "2025-03-20"},
-    {"title": "TalkPlay Demo", "filename": "2025-06-11-talkplay-demo.md", "preview": "We're excited to announce the release of our new demo, TalkPlay. This demo showcases our latest advancements in music discovery and recommendation systems.", "date": "2025-06-11"}
+    {"title": "TalkPlay Demo", "filename": "2025-06-11-talkplay-demo.md", "preview": "We're excited to announce the release of our new demo, TalkPlay. This demo showcases our latest advancements in music discovery and recommendation systems.", "date": "2025-06-11"},
+    {"title": "LP-MusicDialog (or TalkPlayData 0.5): Generating Music Discovery Dialogues at ISMIR 2024", "filename": "2024-11-14-ismir-2024-paper.md", "preview": "This week, we presented our latest research on generating large-scale music dialogue datasets at ISMIR 2024. This work is a foundational step for our TalkPlay model.", "date": "2024-11-14"}
 ]
