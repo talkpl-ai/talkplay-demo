@@ -1,0 +1,1393 @@
+{
+  "metadata": {
+    "generated_at": "2025-07-28 18:48:19",
+    "model_used": "gemini-2.5-flash",
+    "num_turns": 8,
+    "num_listener_tracks": 5,
+    "num_recommendation_pool": 32,
+    "token_usage_summary": {
+      "total_usage": {
+        "input_text_tokens": 146427,
+        "input_image_tokens": 102684,
+        "input_audio_tokens": 38606,
+        "output_tokens": 3965,
+        "prompt_details": null,
+        "response_details": null
+      },
+      "profiling_usage": {
+        "input_text_tokens": 1560,
+        "input_image_tokens": 1290,
+        "input_audio_tokens": 485,
+        "output_tokens": 35,
+        "prompt_details": null,
+        "response_details": null
+      },
+      "conversation_goal_usage": {
+        "input_text_tokens": 9196,
+        "input_image_tokens": 8256,
+        "input_audio_tokens": 3104,
+        "output_tokens": 259,
+        "prompt_details": null,
+        "response_details": null
+      },
+      "recsys_usage": {
+        "input_text_tokens": 98388,
+        "input_image_tokens": 74304,
+        "input_audio_tokens": 27936,
+        "output_tokens": 2075,
+        "prompt_details": null,
+        "response_details": null
+      },
+      "listener_usage": {
+        "input_text_tokens": 37283,
+        "input_image_tokens": 18834,
+        "input_audio_tokens": 7081,
+        "output_tokens": 1596,
+        "prompt_details": null,
+        "response_details": null
+      },
+      "total_cost": {
+        "input_text_cost": 0.0439281,
+        "input_image_cost": 0.030805199999999998,
+        "input_audio_cost": 0.038606,
+        "output_cost": 0.0099125,
+        "total_cost": 0.12325180000000001
+      },
+      "profiling_cost": {
+        "input_text_cost": 0.000468,
+        "input_image_cost": 0.000387,
+        "input_audio_cost": 0.000485,
+        "output_cost": 8.749999999999999e-05,
+        "total_cost": 0.0014275
+      },
+      "conversation_goal_cost": {
+        "input_text_cost": 0.0027587999999999996,
+        "input_image_cost": 0.0024768,
+        "input_audio_cost": 0.003104,
+        "output_cost": 0.0006475000000000001,
+        "total_cost": 0.0089871
+      },
+      "recsys_cost": {
+        "input_text_cost": 0.029516399999999998,
+        "input_image_cost": 0.022291199999999997,
+        "input_audio_cost": 0.027936,
+        "output_cost": 0.0051875,
+        "total_cost": 0.0849311
+      },
+      "listener_cost": {
+        "input_text_cost": 0.0111849,
+        "input_image_cost": 0.0056502,
+        "input_audio_cost": 0.007081,
+        "output_cost": 0.00399,
+        "total_cost": 0.0279061
+      }
+    }
+  },
+  "conversation_goal": {
+    "category": "H",
+    "specificity": "HL",
+    "listener_goal": "find multiple songs showcasing the career evolution of an iconic hip-hop artist, focusing on their lyrical and thematic development across different albums.",
+    "listener_expertise": "high",
+    "target_turn_count": 3,
+    "queries": {
+      "initial": {
+        "example": [
+          "Show me tracks by Nas from his early 2000s albums that highlight his raw storytelling and social commentary.",
+          "I want to explore the progression of a legendary MC; start with Nas's work from the Stillmatic era."
+        ]
+      },
+      "iteration": {
+        "example": [
+          "Now, can you show me his later material that demonstrates a more personal or reflective lyrical style?",
+          "Excellent! Are there other standout tracks from his discography that illustrate a significant shift in his sound or themes?"
+        ]
+      },
+      "achieved": {
+        "example": [
+          "This selection perfectly illustrates Nas's artistic evolution throughout his career.",
+          "I appreciate seeing the distinct eras of his discography and his lyrical maturity. Goal achieved!"
+        ]
+      }
+    }
+  },
+  "listener_profile": {
+    "age_group": "20s",
+    "country": "United States",
+    "gender": "male",
+    "preferred_musical_culture": "African American Music Culture",
+    "preferred_language": "English",
+    "top_1_artist": "Kem",
+    "top_1_genre": "R&B/Soul",
+    "success": true,
+    "code": "200"
+  },
+  "session_context": {
+    "listener_tracks": [
+      {
+        "track_id": "0hihs6rrk3eL2iRS0xzmpX",
+        "title": "Better (feat. Shana Tucker, Eric Roberson)",
+        "artist": "The Foreign Exchange",
+        "album": "Love In Flying Colors",
+        "lyrics": "The more I get the more you're wanted\nBaby, I'm trying hard to make you happy\nMaybe I don't say I lo",
+        "tags": [
+          "neo-soul",
+          "hip hop",
+          "nu soul",
+          "modern world soul music",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2013-09-24",
+        "tempo": "95.13",
+        "key": "Eb major",
+        "chord": "G#:maj, D#:maj, G#:maj, D#:maj, G#:maj, D#:maj, G#:maj, A:min, A#:maj, C:min, A#:maj, G#:maj, C:min",
+        "popularity": "32"
+      },
+      {
+        "track_id": "0iuentwA8Lmurik4SaBVUb",
+        "title": "Insecurities",
+        "artist": "Syd",
+        "album": "FIN, Fin",
+        "lyrics": "[Verse 1]\nYou can thank my insecurities\nFor keeping me around you babe\nI pack my bags but never leav",
+        "tags": [
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2017-02-03",
+        "tempo": "62.62",
+        "key": "A major",
+        "chord": "A:maj, A#:maj, C:maj, A#:maj, C:maj, A:maj, A#:maj, F:min, C:maj, A#:maj, F:maj, A:maj, F:min, A#:maj, F:maj, C:maj, A:maj, E:min, B:maj",
+        "popularity": "29"
+      },
+      {
+        "track_id": "6iWs0J0CnadMMbxLQtZrCG",
+        "title": "I Can't Stop Loving You",
+        "artist": "Kem",
+        "album": "Kem Album II, I Can't Stop Loving You",
+        "lyrics": "[Verse 1]\nI think about the day I met the perfect stranger\nI think about us\nAnd I think about the da",
+        "tags": [
+          "new soul",
+          "tha shiznit",
+          "artist - kem",
+          "soul",
+          "schrockstar",
+          "blandband",
+          "favorites",
+          "sensual journey",
+          "kem",
+          "singer-songwriter",
+          "rn-b-soul and more",
+          "groove to this",
+          "waves",
+          "kevin",
+          "love",
+          "lento",
+          "lets fuck",
+          "summer",
+          "male vocalists",
+          "favorite artists"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2004-01-01",
+        "tempo": "70.65",
+        "key": "F# major",
+        "chord": "D#:min, B:maj, G#:min, A#:min, B:maj, G#:min, A#:min, F#:maj, B:maj, G#:min, A#:min, B:maj, G#:min, A#:min, F#:maj, G#:min",
+        "popularity": "60"
+      },
+      {
+        "track_id": "0piJU93aR63B2svvpA2YKM",
+        "title": "thelove",
+        "artist": "Jitwam",
+        "album": "selftitled, thelove /alone",
+        "lyrics": "[Intro/Chorus]\nI don't need the bus stop\nImma get there on my own\nI don't need the corner shop\nImma ",
+        "tags": [
+          "Hip-Hop/Rap",
+          "Electronic"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2017-11-03",
+        "tempo": "84.23",
+        "key": "E major",
+        "chord": "A:maj, F#:min, A:maj, E:maj, E:min, B:min, F#:min, E:maj, E:min, D:maj, B:min, C#:maj, F#:min, A:maj, E:min",
+        "popularity": "0"
+      },
+      {
+        "track_id": "6nTcn8CybBcx0t7IaXEJ6O",
+        "title": "Thank God I Found You - Make It Last Remix Edit",
+        "artist": "Supa Engineer \"Duro\", Mariah Carey, Joe, Nas, Clue",
+        "album": "My Name Is Joe, Thank God I Found You (Remix)",
+        "lyrics": "[Intro: Nas, Mariah Carey & Joe]\nUh, yeah, Cluemanati\nMC to the J-O-E\nMake it last\nNastradamus remix",
+        "tags": [
+          "pop",
+          "favorite songs ever",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2000-04-18",
+        "tempo": "84.15",
+        "key": "E minor",
+        "chord": "A:min, B:min, C:maj, B:min, E:maj, A:min, B:min, E:maj, C:maj, B:min, E:maj, B:maj, A:min, B:min, G:maj, A:min",
+        "popularity": "48"
+      }
+    ],
+    "recommendation_pool_tracks": [
+      {
+        "track_id": "54xGPUVmBOgggUe1InTl1V",
+        "title": "Jealousy",
+        "artist": "Slum Village",
+        "album": "Late Night Tales: Another Late Night - Zero 7, Fantastic, Vol. 2.10",
+        "lyrics": "[All]\nYou know...if you make moves some people will envy\nSay what's (what's) up with this jealousy\n\n",
+        "tags": [
+          "detroit",
+          "down beat",
+          "easy listening",
+          "soul",
+          "slum",
+          "hiphopsoul",
+          "mobeatz1",
+          "drjazzmrfunkmusic",
+          "quirky",
+          "kss1984 - great",
+          "teddymuzik",
+          "true school hip hop",
+          "deephiphop",
+          "dilla",
+          "urban",
+          "hipnasty",
+          "produced by j dilla",
+          "downtempo",
+          "smoochy",
+          "2000"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2010-10-12",
+        "tempo": "98.31",
+        "key": "A minor",
+        "chord": "Unknown",
+        "popularity": "23"
+      },
+      {
+        "track_id": "5xbDzjo2PYqeLv7DWqTGB3",
+        "title": "2nd Childhood",
+        "artist": "Nas",
+        "album": "Stillmatic",
+        "lyrics": "[Intro]\nYeah, hahaha\nWhen I flow for the street, who else could it be?\nNas\n\n[Verse 1]\nYo, explode, m",
+        "tags": [
+          "josh rap",
+          "underground hip-hop",
+          "east coast",
+          "east coast rap",
+          "premo",
+          "best beats ever",
+          "must own",
+          "cool down",
+          "00s",
+          "dj premier",
+          "90s",
+          "new york rap",
+          "soul",
+          "stillmatic",
+          "knowledge",
+          "my top 5",
+          "childhood",
+          "wrong album cover",
+          "american",
+          "rap"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2001-12-18",
+        "tempo": "79.10",
+        "key": "C# minor",
+        "chord": "Unknown",
+        "popularity": "46"
+      },
+      {
+        "track_id": "2eqKwhxCfBLpM7wSJ583Nr",
+        "title": "Super Koto - Original Mix",
+        "artist": "Ponzu Island",
+        "album": "Los Amantes, Ponzu Beach",
+        "lyrics": "[Into:]\nGahh Yahh!\nStayhigh!\n\n[Chrissy Stayhigh]\nSosafina rey  humble these hoes\nI’m from Baltimore ",
+        "tags": [
+          "Dance",
+          "Electronic"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2016-06-10",
+        "tempo": "119.95",
+        "key": "G major",
+        "chord": "Unknown",
+        "popularity": "0"
+      },
+      {
+        "track_id": "56Tci8VFMXjEAx6pCqVbP3",
+        "title": "Destroy & Rebuild",
+        "artist": "Nas",
+        "album": "Stillmatic",
+        "lyrics": "[Intro]\nThis is a journey into the world's most largest and notorious projects, Queensbridge\nListen ",
+        "tags": [
+          "Hip-Hop/Rap",
+          "hip hop",
+          "hip-hop",
+          "beats",
+          "rap"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2001-12-18",
+        "tempo": "94.14",
+        "key": "E minor",
+        "chord": "Unknown",
+        "popularity": "38"
+      },
+      {
+        "track_id": "3CX4Ygh1Wb7yYO0BQGhNyJ",
+        "title": "Bye Baby",
+        "artist": "Nas",
+        "album": "Life Is Good, Life Is Good (Explicit Version)",
+        "lyrics": "[Produced by Noah \"40\" Shebib & Salaam]\n\n[Intro: Guy sample]\nI guess you knew and blew a good thing,",
+        "tags": [
+          "5 of 10 stars",
+          "Hip-Hop/Rap",
+          "pih-poh",
+          "east coast rap",
+          "te2 best of 2012",
+          "hiphop - east coast",
+          "back in the day when i was young",
+          "hip-hop",
+          "rap"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2012-01-01",
+        "tempo": "89.11",
+        "key": "Eb major",
+        "chord": "D#:maj, F:maj, D#:maj, G#:maj, D#:maj, C:min, F:maj, D#:maj, F:maj, D#:maj, A#:maj, G#:maj, D#:maj",
+        "popularity": "31"
+      },
+      {
+        "track_id": "6ubNZ5edKBKH3MQKatUY3S",
+        "title": "4Ever (feat. Fabolous)",
+        "artist": "Fabolous, Lil' Mo",
+        "album": "4 Ever (feat. Fabolous)",
+        "lyrics": "[Lil' Mo]\nBaby, I'm at the point at my life\nAnd I'm tired of playing games\nI'm ready to settle down\n",
+        "tags": [
+          "kewl",
+          "clean",
+          "R&B/Soul",
+          "baby song by lil mo"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2003-02-11",
+        "tempo": "98.98",
+        "key": "F# major",
+        "chord": "F:min, A#:maj, D#:maj, G#:min, C#:maj, F#:maj, F#:min, B:maj, E:maj, A:maj, D:maj, C#:min, D#:maj, F#:maj, B:maj, C#:maj, D#:min, C#:maj",
+        "popularity": "52"
+      },
+      {
+        "track_id": "7BiqCOsctkaGb7KU8NbKUw",
+        "title": "Thru the Night",
+        "artist": "Phonte",
+        "album": "Tigallerro",
+        "lyrics": "[Intro]\nYeah, yeah, yeah, yeah\n\n[Verse 1]\nI've been waiting on the daytime baby\nI know that you want",
+        "tags": [
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2016-07-22",
+        "tempo": "92.27",
+        "key": "F# major",
+        "chord": "Unknown",
+        "popularity": "26"
+      },
+      {
+        "track_id": "7HqhEdHC2q76pjY3vlHuzp",
+        "title": "Danger",
+        "artist": "Amel Larrieux",
+        "album": "Ice Cream Everyday",
+        "lyrics": "Danger\nSomebody's near\nThey don't want you\nTo know or to hear\nKeep you silent\nSo you disappear\nTeach",
+        "tags": [
+          "Pop",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2013-10-22",
+        "tempo": "120.85",
+        "key": "F# minor",
+        "chord": "Unknown",
+        "popularity": "9"
+      },
+      {
+        "track_id": "72hFOhhhnOJZnnp6uVOgPn",
+        "title": "Complexion (A Zulu Love)",
+        "artist": "Rapsody, Kendrick Lamar",
+        "album": "To Pimp A Butterfly",
+        "lyrics": "[Produced by Thundercat & Sounwave; Additional production by Terrace Martin & Antydote]\n\n[Intro: Pet",
+        "tags": [
+          "kendrick lamar",
+          "beautiful music",
+          "soulful",
+          "incredible",
+          "soul",
+          "jazz rap",
+          "west coast",
+          "2015 -- lp to pimp a butterfly",
+          "deep",
+          "smooth",
+          "2015",
+          "west coast hip-hop",
+          "pete rock",
+          "rapsody",
+          "experimental hip hop",
+          "10s",
+          "fip",
+          "california",
+          "Hip-Hop/Rap",
+          "jazz"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2015-03-16",
+        "tempo": "90.55",
+        "key": "G major",
+        "chord": "Unknown",
+        "popularity": "63"
+      },
+      {
+        "track_id": "6V5L99nGuMyJ1XlPCVNOcd",
+        "title": "Climax (Girl Shit)",
+        "artist": "Slum Village",
+        "album": "Slum Village Greatest Hits, Vol. 2, Slum Village Greatest Hits Vol. 2",
+        "lyrics": "[Verse 1: J Dilla as Jay Dee]\nYou ain't gotta play hard to get\nI know you, I know you like the art o",
+        "tags": [
+          "dopeeeeee",
+          "loved",
+          "slum village",
+          "hiphopsoul",
+          "smooth",
+          "favourite",
+          "favorite dilla beats",
+          "slum village j dilla climax",
+          "hit that",
+          "gentle",
+          "delicious groove",
+          "chillout",
+          "chill",
+          "dilla touched this",
+          "good shit",
+          "Hip-Hop/Rap",
+          "come on baby",
+          "eargasms",
+          "relaxation",
+          "curbside massacre"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2007-06-20",
+        "tempo": "95.78",
+        "key": "G# minor",
+        "chord": "F#:maj, G:maj, G#:min, E:maj, D#:maj, G#:min, E:maj, G#:min, G#:maj, G#:min, E:maj, B:min, D#:maj, B:maj, G#:min, E:maj, G#:min, B:maj, E:maj, D#:maj, B:maj, E:maj",
+        "popularity": "29"
+      },
+      {
+        "track_id": "0wDPw6OTxg0yMe5M7nusEs",
+        "title": "4u/Lately",
+        "artist": "Jay Prince",
+        "album": "Befor Our Time",
+        "lyrics": "[Part 1: 4 U]\n\n[Intro]\nAnd just vibe with me\nAnd just ride with me\n\n[Verse 1]\nThis lady had me think",
+        "tags": [
+          "Hip-Hop/Rap",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2015-01-20",
+        "tempo": "86.01",
+        "key": "Bb minor",
+        "chord": "F#:maj, F:maj, C#:maj, G#:min, F#:maj, F:maj, A#:min, G#:min, F#:maj, F:min, C#:maj, A#:min, F#:maj, F:maj, C#:maj, G#:min, F#:maj, F#:min",
+        "popularity": "0"
+      },
+      {
+        "track_id": "4Uv65Xq0mnBeR3JNc0e7I0",
+        "title": "I Do Take",
+        "artist": "Amel Larrieux",
+        "album": "Ice Cream Everyday",
+        "lyrics": "Sometimes you just know\nLike nothin you’ve ever known\nLike words cannot describe\nLike space cannot d",
+        "tags": [
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2013-10-22",
+        "tempo": "65.22",
+        "key": "Ab major",
+        "chord": "G#:maj, D#:maj, C#:maj, F:min, G#:maj, C#:maj, F:min, G#:maj, D#:maj, C#:maj, F:min, G#:maj, C#:maj, F:min, G#:maj",
+        "popularity": "15"
+      },
+      {
+        "track_id": "7hdWVA2AVIziwGIFnlONVI",
+        "title": "You Don't See Me",
+        "artist": "Amel Larrieux",
+        "album": "Ice Cream Everyday",
+        "lyrics": "There you are\nHere I am\nYou're so close but so far\nAll we are is friends\nBut that's not enough\nWhen ",
+        "tags": [
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2013-10-22",
+        "tempo": "91.38",
+        "key": "C major",
+        "chord": "Unknown",
+        "popularity": "14"
+      },
+      {
+        "track_id": "6iMeiLpoD5YomwLbAXqYe2",
+        "title": "We Are On The Move (feat. Eric Roberson)",
+        "artist": "Zo!, Eric Roberson",
+        "album": "ManMade, Soul Togetherness 2013",
+        "lyrics": "Iluvu2much to let you hurt me again\nThough leaving you is like walking in the wind\nI can't return or",
+        "tags": [
+          "Funk",
+          "Neo-Soul",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2013-05-21",
+        "tempo": "118.22",
+        "key": "D minor",
+        "chord": "D:maj, G:min, A#:maj, F#:min, D:maj, F#:min, G:min, A#:maj, F#:min, D:maj, G:min, A#:maj, D:maj, G:min",
+        "popularity": "36"
+      },
+      {
+        "track_id": "3iVcZ5G6tvkXZkZKlMpIUs",
+        "title": "Alright",
+        "artist": "Kendrick Lamar",
+        "album": "To Pimp A Butterfly",
+        "lyrics": "[Produced by Pharrell Williams & Sounwave]\n[Directed by Colin Tilley]\n\n[Intro: Kendrick Lamar]\nAlls ",
+        "tags": [
+          "kendrick lamar",
+          "neo-soul",
+          "specialist",
+          "political hip hop",
+          "fuk ya",
+          "poetry",
+          "jazz rap",
+          "west coast",
+          "childhood",
+          "american",
+          "west coast hip-hop",
+          "2015",
+          "dead homies",
+          "experimental hip hop",
+          "2015 single",
+          "pharrell williams",
+          "saxophone",
+          "10s",
+          "jam",
+          "2010s rap"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2015-03-16",
+        "tempo": "110.15",
+        "key": "G minor",
+        "chord": "G:min, G:maj, G#:maj, G:maj, G:maj, G#:maj, G:maj, G:min, D:min, G#:maj, G:min, F:maj",
+        "popularity": "84"
+      },
+      {
+        "track_id": "6dRj771QZr0KOQVwaB6ykM",
+        "title": "Grown Man Sport",
+        "artist": "InI, Pete Rock",
+        "album": "Center of Attention",
+        "lyrics": "[Verse 1: Ras G]\nNatty Dread like Bob so rock steady\nWith no spaghetti with meat sauce\nMaybe salads ",
+        "tags": [
+          "strictly for the undergound",
+          "hip hop us",
+          "Hip-Hop/Rap",
+          "we be chillin",
+          "true hip hop",
+          "underground hip hop",
+          "da real underground old skool hip hop",
+          "hip-hop",
+          "true musical hip hop",
+          "geiler typ",
+          "the good old nineties rapshit",
+          "da real old skool hip hop"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "1998-01-01",
+        "tempo": "88.07",
+        "key": "G major",
+        "chord": "E:min, G:maj, D:min, A#:maj, E:maj, G:maj, D:min, D:maj, E:min, G:maj, D:maj, B:min, E:min, G:maj, F:maj, E:maj, G:maj, F:maj, A:maj",
+        "popularity": "1"
+      },
+      {
+        "track_id": "0aDQevECiy9BeCtyNeVgp0",
+        "title": "Give Me You",
+        "artist": "Brandy",
+        "album": "Brandy",
+        "lyrics": "[Intro]\nOoh, yeah\nOoh, yeah\nOh yeah\n\n[Verse 1]\nIs there a problem\nThat you can't solve? (whoa)\nYou'r",
+        "tags": [
+          "all of my songs",
+          "soul tag",
+          "songpop",
+          "brandy",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "1994-01-01",
+        "tempo": "140.10",
+        "key": "Bb major",
+        "chord": "D#:min, F#:maj, G#:maj, F#:maj, D#:maj, C:min, G:min, C:min, D#:maj, D#:min, F:maj, A#:maj, D#:maj, C:min, G:min, D#:min, F:maj",
+        "popularity": "29"
+      },
+      {
+        "track_id": "44xoXOb6jBi9rUnjYA68Jr",
+        "title": "JustMyThoughtsSoul!!!!",
+        "artist": "9th Wonder",
+        "album": "Tutankhamen (Valley Of The Kings)",
+        "lyrics": "[Intro : Jozeemo]\nI’ve been living so foul so long, I swear\nI think it’s the only way I know how to ",
+        "tags": [
+          "soulful",
+          "Hip-Hop/Rap",
+          "hip-hop"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2012-05-11",
+        "tempo": "175.22",
+        "key": "F# major",
+        "chord": "G#:maj, F:min, C#:maj, F#:maj, G#:maj, A#:min, G#:min, C#:maj, F#:maj, G#:maj, F:min, C#:maj, F#:maj, G#:maj, F:min, C#:maj, F#:maj, G#:maj, F:min, C#:maj, F#:maj, G#:maj, A#:min, G#:min, B:maj, C#:maj",
+        "popularity": "16"
+      },
+      {
+        "track_id": "397fxHew7NyjryGWGr1Imy",
+        "title": "Baby, This Love I Have",
+        "artist": "Minnie Riperton",
+        "album": "Adventures In Paradise",
+        "lyrics": "[Verse 1]\nThings I say and do may not come clear through\nMy words may not convey just what I'm feeli",
+        "tags": [
+          "fip",
+          "Hip-Hop/Rap",
+          "omfg",
+          "lead female",
+          "female vocalists",
+          "soul",
+          "70s",
+          "Pop",
+          "R&B/Soul",
+          "smooth"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "1975-05-22",
+        "tempo": "84.11",
+        "key": "C# minor",
+        "chord": "Unknown",
+        "popularity": "61"
+      },
+      {
+        "track_id": "5EUPK2x1wJ5bERxjQ47lKv",
+        "title": "I Wish",
+        "artist": "Tom Misch",
+        "album": "I Wish",
+        "lyrics": "[Verse 1]\nI wish you'd known\nHow far I'd go\nI was lost in my mind\nLost in my mind\nI was lost in my m",
+        "tags": [
+          "Alternative"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2016-06-28",
+        "tempo": "87.12",
+        "key": "E major",
+        "chord": "Unknown",
+        "popularity": "0"
+      },
+      {
+        "track_id": "4UeSleTsjljEIdEGRdVggm",
+        "title": "Lihue",
+        "artist": "Nohelani Cypriano",
+        "album": "Lihue",
+        "lyrics": "(1, 2, 3, 4)\n\nNuma cidade\nSó tem uma rua\nVives uma vida\nQue nunca foi tua\n\nDói-te a cabeça\nQuando os",
+        "tags": [
+          "pop",
+          "funk",
+          "fip",
+          "gilles peterson",
+          "female vocalist",
+          "jazz",
+          "hanaola",
+          "soul",
+          "90s",
+          "1979",
+          "70s",
+          "nohelani cypriano",
+          "disco",
+          "groove",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2014-12-22",
+        "tempo": "94.37",
+        "key": "D minor",
+        "chord": "D:maj, D:min, G:min, D:maj, A#:maj, A:maj, E:min, D:min, G:min, D:min, A#:maj, A:maj",
+        "popularity": "43"
+      },
+      {
+        "track_id": "6xYKDcrTl36jQq7gCXbbyR",
+        "title": "Ur the Shhh",
+        "artist": "Amel Larrieux",
+        "album": "Ice Cream Everyday",
+        "lyrics": "There are some things that beg\nTo be said without subtlety\nGone are my normal charms\nYou disarm the ",
+        "tags": [
+          "neo-soul",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2013-10-22",
+        "tempo": "73.83",
+        "key": "D major",
+        "chord": "G:maj, D:maj, F#:min, G:maj, D:maj, G:maj, D:maj, G:maj, D:maj",
+        "popularity": "11"
+      },
+      {
+        "track_id": "4h5OlyjUj0CoaT9e51OEEo",
+        "title": "Berries and Cream",
+        "artist": "Amel Larrieux",
+        "album": "Ice Cream Everyday",
+        "lyrics": "[Verse 1:]\nThe flowers bow their heads\nThe sun she blushes\nAnd she turns red\nLeaves are begging tree",
+        "tags": [
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2013-10-22",
+        "tempo": "87.04",
+        "key": "D minor",
+        "chord": "A#:maj, G:min, D:min, A#:maj, F:maj, D:min, C:maj, A#:maj, A:min, D:min, G:maj, A#:maj, F:maj, D:min, G:maj, D:maj, A#:maj, D:min, A#:maj",
+        "popularity": "17"
+      },
+      {
+        "track_id": "3TfRRxG56lHDrunbXrNRwX",
+        "title": "K.I. Feeling (Original Arcade Soundtrack)",
+        "artist": "Robin Beanland",
+        "album": "Killer Instinct: Season One Soundtrack + Original Arcade Soundtrack",
+        "lyrics": "[Verse 1]\nI trace his facial features with my fingers\nAnd blessed the texture with kisses on the spo",
+        "tags": [
+          "Soundtracks"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2014-10-14",
+        "tempo": "140.12",
+        "key": "B minor",
+        "chord": "Unknown",
+        "popularity": "31"
+      },
+      {
+        "track_id": "1IgePMOW0qEe1AViWgkal9",
+        "title": "Pretty Little Birds",
+        "artist": "Isaiah Rashad, SZA",
+        "album": "Ctrl",
+        "lyrics": "[Verse 1: SZA]\nYou are but a phoenix among feathers\nYou're broken by the waves among the sea\nThey'll",
+        "tags": [
+          "featuring",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2017-06-09",
+        "tempo": "89.43",
+        "key": "Bb major",
+        "chord": "F:min, A#:maj, G#:min, B:maj, G#:maj, F#:maj, A#:maj, G#:maj, A#:maj, G#:maj, A#:maj, F#:maj",
+        "popularity": "70"
+      },
+      {
+        "track_id": "7LaI3mRTJu66r9HKdv7iBx",
+        "title": "Gang Over Luv",
+        "artist": "Brent Faiyaz",
+        "album": "Sonder Son",
+        "lyrics": "[Verse 1]\nI was hella broke then, I ain't have a dime\nBut I was always focused, I ain't waste no tim",
+        "tags": [
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2017-10-13",
+        "tempo": "82.07",
+        "key": "Bb major",
+        "chord": "Unknown",
+        "popularity": "71"
+      },
+      {
+        "track_id": "7rrPANmUDxWbA9e6rtenLa",
+        "title": "Everybody",
+        "artist": "Bentley",
+        "album": "Everybody",
+        "lyrics": "[Chorus: Fonzworth Bentley & Kanye West]\nEverybody, let's go\n(Don't stop) Don't stop baby\n(Don't, do",
+        "tags": [
+          "Hip-Hop/Rap"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2008-01-01",
+        "tempo": "100.25",
+        "key": "A minor",
+        "chord": "Unknown",
+        "popularity": "48"
+      },
+      {
+        "track_id": "2DIqPQY9scuv8IeJA1Ouep",
+        "title": "Do You Believe",
+        "artist": "Supreme Jubilees",
+        "album": "It'll All Be Over, It’ll All Be Over",
+        "lyrics": "[Verse 1]\nIs there a question, in your mind today\nIf God is real, or is it just hearsay\nHow do I kno",
+        "tags": [
+          "fip",
+          "R&B/Soul",
+          "Soundtracks"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2015-01-20",
+        "tempo": "92.51",
+        "key": "Ab major",
+        "chord": "Unknown",
+        "popularity": "0"
+      },
+      {
+        "track_id": "1eQXOW0ouxAFMYhppeQEQ0",
+        "title": "A Million Sapphires",
+        "artist": "Amel Larrieux",
+        "album": "Ice Cream Everyday",
+        "lyrics": "[Verse 1:]\nTender\nPrecious\nLovely one\nGolden\nAnd kissed\nBy the sun\nSpeak and\nGems fall\nFrom your ton",
+        "tags": [
+          "saffron",
+          "R&B/Soul"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2013-10-22",
+        "tempo": "81.99",
+        "key": "B minor",
+        "chord": "B:min, F#:min, B:min, B:maj, B:min, G:maj, B:maj, B:min, F#:min, B:maj, B:min, B:maj, B:min, F#:min, B:min, F#:min, B:min, B:maj",
+        "popularity": "11"
+      },
+      {
+        "track_id": "1l7xvA5XajmKQDo1h8Vc3K",
+        "title": "Blast",
+        "artist": "Vinia Mojica, Reflection Eternal",
+        "album": "Train Of Thought",
+        "lyrics": "[Intro]\nLet me, let me practice.. hehehe, ehehe\nTalib.. T'Kwi, Kweli - I can't say it!\nThat's wack..",
+        "tags": [
+          "summer",
+          "Rock",
+          "Hip-Hop/Rap",
+          "Alternative Rap"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2000-10-17",
+        "tempo": "93.84",
+        "key": "F minor",
+        "chord": "F#:maj, A#:maj, D#:maj, G:maj, A:maj, A#:maj, G:maj, D#:maj, G:maj, E:maj, F:maj, A:maj, G#:maj",
+        "popularity": "56"
+      },
+      {
+        "track_id": "2wWJDCXw76f7s1EqaNCYps",
+        "title": "Imagination/Crown Royal Suite",
+        "artist": "Jill Scott",
+        "album": "The Real Thing: Words And Sounds Vol. 3 Deluxe Limited Edition, The Real Thing: Words And Sounds Vol. 3",
+        "lyrics": "[Verse 1]\nCan't believe you're touching me\nLike the way you're touching me\nI can feel past your skin",
+        "tags": [
+          "neo-soul",
+          "rhythm and blues",
+          "soul",
+          "silky sexy smooth",
+          "my girl love this track",
+          "nu jazz",
+          "downtempo",
+          "rhythum and blues tag",
+          "philadelphia",
+          "chillout",
+          "neo soul",
+          "nu-bluz funky grooves in the e-lounge",
+          "erotic",
+          "rnb",
+          "female vocalists",
+          "singer-songwriter",
+          "groove",
+          "funk",
+          "electronic-lounge",
+          "nu-bluz"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2007-09-25",
+        "tempo": "67.67",
+        "key": "Db major",
+        "chord": "Unknown",
+        "popularity": "24"
+      },
+      {
+        "track_id": "7FPjgmL65356wLQOrsWRg1",
+        "title": "Take Off The Blues",
+        "artist": "The Foreign Exchange, Darien Brockington",
+        "album": "Leave It All Behind",
+        "lyrics": "[Phonte]\n(Mmmmmmm, haaah-hahh-hahhh...)\nYou might, you might, you might, you might as well...\n(Mmmmm",
+        "tags": [
+          "beautiful",
+          "neo-soul",
+          "grown and sexy",
+          "alright-4chill",
+          "makes me smile",
+          "chilli willi",
+          "jazz-hop",
+          "i love",
+          "slick",
+          "soulful",
+          "soul",
+          "keep",
+          "intimate",
+          "slow and sexy",
+          "my dancefloor",
+          "smooth sunday afternoon",
+          "smooth",
+          "tfe",
+          "music to get the pussy wet",
+          "soul tag"
+        ],
+        "album_art_path": null,
+        "duration": null,
+        "spotify_track_release_date": "2008-10-07",
+        "tempo": "94.32",
+        "key": "G major",
+        "chord": "Unknown",
+        "popularity": "0"
+      }
+    ]
+  },
+  "conversation_turns": [
+    {
+      "turn_number": 1,
+      "listener_turn": {
+        "turn_number": 1,
+        "prompt": "\n## Turn 1\nYou are starting a new music discovery conversation. Your task is to make an initial request.\n\n**CRITICAL INSTRUCTION**: Your `message` for this turn MUST be an exact, verbatim copy of ONE of the examples from the list below.\n\n### Conversation Goal\nfind multiple songs showcasing the career evolution of an iconic hip-hop artist, focusing on their lyrical and thematic development across different albums.\n\n### Initial Query Examples\n- \"Show me tracks by Nas from his early 2000s albums that highlight his raw storytelling and social commentary.\"\n- \"I want to explore the progression of a legendary MC; start with Nas's work from the Stillmatic era.\"\n\n### Response Format\nYour response MUST follow the provided YAML format. The `message` field must be one of the examples above.\nPlease use English language for thought and message.\n\n```yaml\nthought: My goal is to [Conversation Goal]. I will select one of the provided initial queries to start the conversation.\nmessage: [Copy one of the initial query examples here, exactly as it is written.]\n```\n",
+        "thought": "Unknown thought",
+        "goal_progress_assessment": null,
+        "message": "I want to explore the progression of a legendary MC; start with Nas's work from the Stillmatic era.",
+        "success": false,
+        "code": "422"
+      },
+      "recsys_turn": {
+        "turn_number": 1,
+        "prompt": "\n## Turn 1\n\n### CONVERSATION CONTEXT:\n**Previously Recommended Tracks** (DO NOT recommend these again): []\n**Listener's Latest Message**: \"I want to explore the progression of a legendary MC; start with Nas's work from the Stillmatic era.\"\n\n### CRITICAL REQUIREMENTS:\n1. **NO DUPLICATES**: You MUST NOT recommend any track from the \"Previously Recommended Tracks\" list above\n2. **TRACK POOL ONLY**: You can ONLY recommend from your available tracks pool\n3. **EXACT FORMAT**: Your response must be ONLY the YAML block below - no additional text\n4. **EXACT TRACK ID**: Use the precise track_id from your available tracks\n\n**REMEMBER**: Maintain conversation coherence and respond naturally to the listener's feedback while strictly following the format.\n\n\n### MANDATORY RESPONSE FORMAT:\n\n**CRITICAL FORMATTING RULES**:\n- Your ENTIRE response = ONLY the YAML block above\n- Do NOT add any text before the YAML block\n- Do NOT add any text after the YAML block\n- Do NOT use markdown or other formatting outside the YAML\n- The track_id MUST be an exact match from your available tracks\n- The track_id MUST NOT appear in the used tracks list\n\nPlease use English language for thought and message.\n### Response Format:\n```yaml\nthought: [CONCISE reasoning in 2-3 sentences maximum. Briefly acknowledge listener feedback and explain why your chosen track fits their request. DO NOT analyze multiple tracks.]\ntrack_id: [The exact track_id for your next recommendation - must NOT be in the used tracks list]\nmessage: [A natural, conversational response that acknowledges their feedback and introduces the next track.]\n```\n\n**IMPORTANT**: Keep the \"thought\" field BRIEF and FOCUSED. Do not analyze multiple tracks or provide extensive comparisons. Simply state why your chosen track matches the listener's request.\n",
+        "thought": "The listener wants to explore Nas's progression starting with the Stillmatic era. \"2nd Childhood\" is directly from the Stillmatic album and aligns perfectly with this request.",
+        "track": {
+          "track_id": "5xbDzjo2PYqeLv7DWqTGB3",
+          "title": "2nd Childhood",
+          "artist": "Nas",
+          "album": "Stillmatic",
+          "lyrics": "[Intro]\nYeah, hahaha\nWhen I flow for the street, who else could it be?\nNas\n\n[Verse 1]\nYo, explode, my thoughts were drunken from quarts of beers\nWas years back, before Nasir would explore a career in rap\nAs a music dude, I mastered this Rubik's Cube\nGodzilla, fought Gargantua, eyes glued to the tube\nWas a long time ago, John Boy Ice\nGeronimo po-lice jumpin' out Chryslers, e-z wider paper\nPops puffin' his cess, punchin' his chest like a gorilla\nOutside was psychos, killers\nSaw Divine, Goon, and Chongo, Lil' Turkey\nR.I.P. Tyrone, 'member no cursin' front of Ms. Vercey\nBig Percy, Crazy Paul, the Sledge Sisters\nMy building was 40-16, once in the blue, hallways was clean\nI knew all that I'd seen had meant somethin'\nLearned early to fear none, little Nas was huntin'\nLivin' carefree laughin', got jokes on the daily\nY'all actin' like some old folks, y'all don't hear me\nYo, I'm in my second childhood\n[Chorus: scratches by DJ Premier]\nWhen I flow for the street, who else could it be?\nN-A-S, Nas\nResurrect through the birth of my seed, Queensbridge\nMake everything right, get yours, nigga\nWhen I flow for the street, who else could it be?\nN-A-S, Nas\nResurrect through the birth of my seed, Queensbridge\nMake everything right, get yours\n\n[Verse 2]\nYo, dude is 31, livin' in his mom's crib\nEx-convict, was paroled there after his long bid\nCornrows in his hair, still slingin', got a crew\nThey break his mom's furniture, watchin' Comicview\nGot babies by different ladies, high, smokin' L's\nIn the same spot he stood since '85, well\nWhen his stash slow, he be crazy\nSay he by his moms, hit her on her payday\nJunior high school dropout, teachers never cared\nThey was paid just to show up and leave, no one succeeds\nSo he moves with his peers, different blocks, different years\nSittin' on different benches like it's musical chairs\nAll his peoples moved on in life, he's on the corners at night\nWith young dudes, it's them he wanna be like\nIt's sad but it's fun to him, right? He never grew up\n31 and can't give his youth up, he's in his second childhood\n[Chorus: scratches by DJ Premier]\nWhen I flow for the street, who else could it be?\nN-A-S, Nas\nResurrect through the birth of my seed, Queensbridge\nMake everything right, get yours, nigga\nWhen I flow for the street, who else could it be?\nN-A-S, Nas\nResurrect through the birth of my seed, Queensbridge\nMake everything right, get yours\n\n[Verse 3]\nBaby girl, she's always talkin', name droppin', hangin' late\nDrinkin', smokin', hates her baby daddy, craves shoppin'\nE poppin', ecstasy takin', won't finish her education\nBest friend she keeps changin', stuck with limitations\nLustin' men, many hotels, Fendi, Chanel\nWith nothin' in her bank account frontin' she do well\nHer kid suffers, he don't get that love he deserve\nHe the Sun, she the Earth, single mom, even worse\nNo job, never stay workin', mad purty\nShorty, they call her the brain surgeon\nTime flyin', she the same person\nNever matures, all her friends married, doin' well\nShe's in the streets yakkety yakkin' like she was twelve\nHoney is twenty-seven, argues fights\nSelfish in her own right for life\nGuess she's in her second childhood\n[Chorus: scratches by DJ Premier]\nWhen I flow for the street, who else could it be?\nN-A-S, Nas\nResurrect through the birth of my seed, Queensbridge\nMake everything right, get yours, nigga\nWhen I flow for the street, who else could it be?\nN-A-S, Nas\nResurrect through the birth of my seed, Queensbridge\nMake everything right, get yours\nWho else could it be?\nN-A-S, Nas",
+          "tags": [
+            "josh rap",
+            "underground hip-hop",
+            "east coast",
+            "east coast rap",
+            "premo",
+            "best beats ever",
+            "must own",
+            "cool down",
+            "00s",
+            "dj premier",
+            "90s",
+            "new york rap",
+            "soul",
+            "stillmatic",
+            "knowledge",
+            "my top 5",
+            "childhood",
+            "wrong album cover",
+            "american",
+            "rap"
+          ],
+          "album_art_path": null,
+          "duration": null,
+          "spotify_track_release_date": "2001-12-18",
+          "tempo": "79.10",
+          "key": "C# minor",
+          "chord": "Unknown",
+          "popularity": "46",
+          "caption": "A male singer sings this hip hop melody with backup singers in vocal harmony. The song is medium tempo with a groovy bass line, steady drumming rhythm, keyboard accompaniment and a strong bass line. The tune is groovy and has poor audio quality."
+        },
+        "message": "Awesome choice! Let's dive right into the Stillmatic era with \"2nd Childhood.\" It's a classic that really sets the tone for that period of Nas's career. Hope you enjoy it!",
+        "success": true,
+        "code": "200"
+      }
+    },
+    {
+      "turn_number": 2,
+      "listener_turn": {
+        "turn_number": 2,
+        "prompt": "name='files/x4mmtd4zofcz' display_name=None mime_type='audio/x-wav' size_bytes=96044 create_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 453159, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 22, 291168, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 453159, tzinfo=TzInfo(UTC)) sha256_hash='NmFhMWU3ZGJhZDhmNTJmZjZjOWJjOWViZjE3MWI4MWQ3MjU2MzFhOGNiZjljYzNiYjkzZmUxOTNhMjIzZmNkYg==' uri='https://generativelanguage.googleapis.com/v1beta/files/x4mmtd4zofcz' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=Nonename='files/y4vzyzbbvcm8' display_name=None mime_type='image/jpeg' size_bytes=225505 create_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 468470, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 25, 359385, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 468470, tzinfo=TzInfo(UTC)) sha256_hash='NzM4MTBhZGE4NDdjYjNlZWY2ZjBmNDUwNGJhNTgyNDcwNTEzN2ZiZjY5NzFiMDAzMzA4NWVkYjA0YjY3Mjc1ZA==' uri='https://generativelanguage.googleapis.com/v1beta/files/y4vzyzbbvcm8' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=None\n## Turn 2\n\nYou just listened to this recommended track:\n- Title: 2nd Childhood\n- Artist: Nas\n- Album: Stillmatic\n\nThe recommendation system said: \"Awesome choice! Let's dive right into the Stillmatic era with \"2nd Childhood.\" It's a classic that really sets the tone for that period of Nas's career. Hope you enjoy it!\"\n\nYour response MUST be strictly guided by your Conversation Goal and your Listener Profile. Assess if this track moves you closer to achieving your goal.\n\n### Pacing Guidance for Turn 2\nThis is your second turn, so consider your conversation strategy:\n- **If your goal has 1-3 target turn counts**: This recommendation should be close to your goal, be specific about what you want\n- **If your goal has 4-6 target turn counts**: This is early-mid conversation, provide clear feedback and moderate refinement\n- **If your goal has 6-8 target turn counts**: This is early conversation, be more exploratory and open to discovery\n\n### Response Format\nYour response MUST be ONLY a single yaml block with three fields: `thought`, `goal_progress_assessment`, `message`. Maintain coherence with the chat history.\nPlease use English language for thought and message.\n\n```yaml\nthought: [Your internal reaction to the track. Does this align with my specific goal? How should I adjust my strategy for the remaining turns?]\ngoal_progress_assessment: [MOVES_TOWARD_GOAL or DOES_NOT_MOVE_TOWARD_GOAL, based on whether this recommendation moves you closer to achieving your Conversation Goal.]\nmessage: [Your concise conversational response and next request. This should be generated based on your thought process and be aimed at steering the recommendations closer to your goal.]\n```\n",
+        "thought": "The recommendation of \"2nd Childhood\" from Stillmatic is a good start as it directly addresses the 'Stillmatic era' part of my request. It showcases his lyrical ability, which is important for understanding his evolution. However, my goal is to find *multiple songs* showcasing his *career evolution* across *different albums*, focusing on *lyrical and thematic development*. One song from one album isn't enough. I need to ask for more tracks, specifically requesting ones that demonstrate a shift in his style or themes, moving beyond just Stillmatic. Since I have a target turn count of 3, I need to be direct and precise. I've used one turn, and I need two more to achieve the goal. I should ask for songs from a later period to show progression.thought: \"2nd Childhood\" is a solid track from the Stillmatic era, aligning with the initial part of my request. It definitely showcases his lyrical prowess. However, my goal is to explore his *career evolution* through *multiple songs* and *different albums*. To achieve this, I need to request tracks from a later period that highlight his thematic or lyrical development. Since I have a short target turn count, I need to be direct with my next request to move towards illustrating that progression.",
+        "goal_progress_assessment": "MOVES_TOWARD_GOAL",
+        "message": "Excellent start! \"2nd Childhood\" definitely highlights his lyrical depth from that era. Now, can you show me his later material that demonstrates a more personal or reflective lyrical style? I'm looking for tracks from albums after the Stillmatic period.",
+        "success": true,
+        "code": "200"
+      },
+      "recsys_turn": {
+        "turn_number": 2,
+        "prompt": "\n## Turn 2\n\n### CONVERSATION CONTEXT:\n**Previously Recommended Tracks** (DO NOT recommend these again): ['5xbDzjo2PYqeLv7DWqTGB3']\n**Listener's Latest Message**: \"Excellent start! \"2nd Childhood\" definitely highlights his lyrical depth from that era. Now, can you show me his later material that demonstrates a more personal or reflective lyrical style? I'm looking for tracks from albums after the Stillmatic period.\"\n\n### CRITICAL REQUIREMENTS:\n1. **NO DUPLICATES**: You MUST NOT recommend any track from the \"Previously Recommended Tracks\" list above\n2. **TRACK POOL ONLY**: You can ONLY recommend from your available tracks pool\n3. **EXACT FORMAT**: Your response must be ONLY the YAML block below - no additional text\n4. **EXACT TRACK ID**: Use the precise track_id from your available tracks\n\n**REMEMBER**: Maintain conversation coherence and respond naturally to the listener's feedback while strictly following the format.\n\n\n### MANDATORY RESPONSE FORMAT:\n\n**CRITICAL FORMATTING RULES**:\n- Your ENTIRE response = ONLY the YAML block above\n- Do NOT add any text before the YAML block\n- Do NOT add any text after the YAML block\n- Do NOT use markdown or other formatting outside the YAML\n- The track_id MUST be an exact match from your available tracks\n- The track_id MUST NOT appear in the used tracks list\n\nPlease use English language for thought and message.\n### Response Format:\n```yaml\nthought: [CONCISE reasoning in 2-3 sentences maximum. Briefly acknowledge listener feedback and explain why your chosen track fits their request. DO NOT analyze multiple tracks.]\ntrack_id: [The exact track_id for your next recommendation - must NOT be in the used tracks list]\nmessage: [A natural, conversational response that acknowledges their feedback and introduces the next track.]\n```\n\n**IMPORTANT**: Keep the \"thought\" field BRIEF and FOCUSED. Do not analyze multiple tracks or provide extensive comparisons. Simply state why your chosen track matches the listener's request.\n",
+        "thought": "The listener wants a more personal and reflective Nas track from after the Stillmatic era. \"Bye Baby\" from the \"Life Is Good\" album fits this perfectly, as it's a deeply personal track released well after Stillmatic.thought: The listener is looking for a more personal and reflective Nas track from albums released after Stillmatic. \"Bye Baby\" from the \"Life Is Good\" album perfectly fits this description, as it's a very personal narrative and was released in 2012.",
+        "track": {
+          "track_id": "3CX4Ygh1Wb7yYO0BQGhNyJ",
+          "title": "Bye Baby",
+          "artist": "Nas",
+          "album": "Life Is Good, Life Is Good (Explicit Version)",
+          "lyrics": "[Produced by Noah \"40\" Shebib & Salaam]\n\n[Intro: Guy sample]\nI guess you knew and blew a good thing, baby\n\n[Verse 1: Nas]\nBye baby, I guess you knew why I walked away\nWhen we walked to the altar, that was an awesome day\nDid counselling, couldn't force me to stay\nSomething happens when you say I do, we go astray\nWhy did we mess it up? We was friends, we had it all\nReason you don't trust men, that was your daddy fault\nHe in the grave – let it go, he no longer living\nSaid you caught him cheating with mom, fucking other women\nFuck that gotta do with us? Here's the keys to the newest truck\nBirkin bags, we burning cash, now baby, do it up\nNo matter who you fuck, that was before me\nWanted you as my shorty since I saw you screaming\n\"Hate you so much right now\"\nShould've saw the meaning, angry black woman\nActions of a demon, I'm leaving\n[Chorus: Guy sample (Nas)]\nI guess you knew and blew a good thing, baby (Bye baby)\nYou know I'm saying bye-bye (Bye-bye baby)\n'Cause I'm saying bye-bye (Bye baby)\n'Cause I'm saying bye-bye\nI guess you knew and blew a good thing, baby\n\n[Verse 2: Nas]\nBye baby, I guess you know why I had to leave\nSeven months in your pregnancy, 'bout to have my seed\nLet's take it back some years, rewind it to the happy years\nYou and your Star Trak fam, I'm thinking you cats are weird\nSame time, different year, I was digging y'all flow\nThen I tatted you on my arm so niggas would know\nI thought no one could stop us, matching gold watches\nI was your Johnny Depp, you was my Janis Joplin\nYet the cuter version, yet I knew you personally\nBetter than you knew yourself – and I knew this for certain\nCrib in the Dominican, you got away from everybody\nYou screaming at the racist cops in Miami was probably\nThe highlight of my life, like \"Ha, yo, look at my wife!\"\nGangsta, me and 20 cops 'bout to fight, crazy night\nBailed you out, next morning we got clean\nLike it never happened, and later we at that Heat game\nJust another day in the life of two people in love\nBut it wasn't enough, so baby, guess what...\n[Chorus: Guy sample (Nas)]\nI guess you knew and blew a good thing, baby (Bye baby)\nOH! OH! AHHHHHHHH! Bye-bye (Bye-bye baby)\nI can't believe that this is happening to us\n'Cause I'm saying bye-bye (Bye baby)\n'Cause I'm saying bye-bye\nI guess you knew and blew a good thing, baby\n\n[Verse 3: Nas]\nListen, could you imagine writing your deposition\nDivorce lawyer telling you how this thing gonna be ending?\nWith you paying out the ass and I'm talking half\nNot some, but half, no, serious, half\nHalf of your soul, half of your heart, you leaving behind\nIt’s either that or die, I wanted peace of mind\nAnd all I seen was selfish cowards\nUnder their breath, saying, \"Why did Nas trust her?\"\nBut look at yourself! Speak louder, bruh!\nYou live with your baby moms\nAnd scared to make an honest woman out of her\nAnd make her your bride, fake pimps, you ain't even alive\nAt least I can say I tried plus enjoyed the ride\nPlus we got our little boy, my little joy and pride\nHe got my nose, my grill, your color, your eyes\nNext go round I hope I pick the truest type\nAnd watch me do it all again – it’s a beautiful life, aight?\nGoodbye!\n[Chorus: Guy sample (Nas)]\n(Bye baby) Baby.. baby\nYou know I'm saying bye-bye (Bye-bye baby)\nI can't believe that this is happening to us\n'Cause I'm saying bye-bye (Bye baby)\nI guess you knew and blew a good thing\nYou know I'm saying bye-bye\nI guess you knew and blew a good thing, baby\n\n[Outro: Guy sample]\n'Til we make love just one more time\nMake it seem forever\nThis is our last and final goodbye\nGoodbye",
+          "tags": [
+            "5 of 10 stars",
+            "Hip-Hop/Rap",
+            "pih-poh",
+            "east coast rap",
+            "te2 best of 2012",
+            "hiphop - east coast",
+            "back in the day when i was young",
+            "hip-hop",
+            "rap"
+          ],
+          "album_art_path": null,
+          "duration": null,
+          "spotify_track_release_date": "2012-01-01",
+          "tempo": "89.11",
+          "key": "Eb major",
+          "chord": "D#:maj, F:maj, D#:maj, G#:maj, D#:maj, C:min, F:maj, D#:maj, F:maj, D#:maj, A#:maj, G#:maj, D#:maj",
+          "popularity": "31",
+          "caption": "This is a hip-hop music piece. There is a male vocalist singing melodically in the lead. The main melody is being played by the piano and the electric guitar while a bass guitar is playing in the background. The rhythm is provided by a slow tempo electronic drum beat. The atmosphere is groovy. This piece could be used in the soundtrack of a crime movie that takes place in the city."
+        },
+        "message": "Absolutely! You're looking for that deeper, more personal side of Nas. Let's move to \"Bye Baby\" from his \"Life Is Good\" album. It's a really reflective track that showcases his growth and intimate storytelling. I think you'll appreciate how personal it gets.",
+        "success": true,
+        "code": "200"
+      }
+    },
+    {
+      "turn_number": 3,
+      "listener_turn": {
+        "turn_number": 3,
+        "prompt": "name='files/zc6j5zi08phs' display_name=None mime_type='audio/x-wav' size_bytes=96044 create_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 271494, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 22, 218489, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 271494, tzinfo=TzInfo(UTC)) sha256_hash='NWFiNmM5YTE1YWVlNzQyMTEwMDBiM2QyMzAwN2ZlYjBkODA0MjVmNzFkZjE5NzYxNjU2OTEzY2Y4MTQzZmM1OQ==' uri='https://generativelanguage.googleapis.com/v1beta/files/zc6j5zi08phs' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=Nonename='files/j4797ibq584z' display_name=None mime_type='image/jpeg' size_bytes=122724 create_time=datetime.datetime(2025, 7, 28, 9, 48, 26, 35688, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 25, 891659, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 26, 35688, tzinfo=TzInfo(UTC)) sha256_hash='MmNlOTkzMjM3ZWVlYjgxMDlhNDE0YzAwZDZhNzY4YjBiNDE0NjFlOGE2ODBiMTI2OTIwM2U1MTE0MWQ2ODBiNA==' uri='https://generativelanguage.googleapis.com/v1beta/files/j4797ibq584z' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=None\n## Turn 3\n\nYou just listened to this recommended track:\n- Title: Bye Baby\n- Artist: Nas\n- Album: Life Is Good, Life Is Good (Explicit Version)\n\nThe recommendation system said: \"Absolutely! You're looking for that deeper, more personal side of Nas. Let's move to \"Bye Baby\" from his \"Life Is Good\" album. It's a really reflective track that showcases his growth and intimate storytelling. I think you'll appreciate how personal it gets.\"\n\nYour response MUST be strictly guided by your Conversation Goal and your Listener Profile. Assess if this track moves you closer to achieving your goal.\n\n### Pacing Guidance\nConsider your target turn count and current turn number:\n- **If this is an early turn in a long conversation**: Be more exploratory, ask follow-up questions, show curiosity\n- **If this is near your target turn count**: Be more decisive, show clear satisfaction or dissatisfaction\n- **If you've exceeded your target turn count**: The goal should be achieved or nearly achieved by now\n\n### Response Format\nYour response MUST be ONLY a single yaml block with three fields: `thought`, `goal_progress_assessment`, `message`. Maintain coherence with the chat history.\nPlease use English language for thought and message.\n\n```yaml\nthought: [Your internal reaction to the track. Consider: Does this align with my goal? How many turns do I have left? Am I making progress at the right pace?]\ngoal_progress_assessment: [MOVES_TOWARD_GOAL or DOES_NOT_MOVE_TOWARD_GOAL, based on whether this recommendation moves you closer to achieving your Conversation Goal.]\nmessage: [Your conversational response and next request. Adjust specificity based on remaining turns and goal progress.]\n```\n",
+        "thought": "I have received \"2nd Childhood\" from Stillmatic, representing his early 2000s work, and \"Bye Baby\" from Life Is Good, showcasing his later, more personal style. These two tracks from different albums clearly illustrate the lyrical and thematic evolution of Nas, fulfilling my goal of exploring the progression of a legendary MC across different albums. Since this is my target turn count (3), I can now confirm that the goal has been achieved. I will now ask for another general recommendation.",
+        "goal_progress_assessment": "MOVES_TOWARD_GOAL",
+        "message": "This selection perfectly illustrates Nas's artistic evolution throughout his career, from the raw storytelling to the more personal and reflective themes. I appreciate seeing the distinct eras of his discography and his lyrical maturity. Goal achieved! Now, can you recommend another iconic hip-hop artist whose discography would be interesting to explore for their lyrical development?",
+        "success": true,
+        "code": "200"
+      },
+      "recsys_turn": {
+        "turn_number": 3,
+        "prompt": "\n## Turn 3\n\n### CONVERSATION CONTEXT:\n**Previously Recommended Tracks** (DO NOT recommend these again): ['5xbDzjo2PYqeLv7DWqTGB3', '3CX4Ygh1Wb7yYO0BQGhNyJ']\n**Listener's Latest Message**: \"This selection perfectly illustrates Nas's artistic evolution throughout his career, from the raw storytelling to the more personal and reflective themes. I appreciate seeing the distinct eras of his discography and his lyrical maturity. Goal achieved! Now, can you recommend another iconic hip-hop artist whose discography would be interesting to explore for their lyrical development?\"\n\n### CRITICAL REQUIREMENTS:\n1. **NO DUPLICATES**: You MUST NOT recommend any track from the \"Previously Recommended Tracks\" list above\n2. **TRACK POOL ONLY**: You can ONLY recommend from your available tracks pool\n3. **EXACT FORMAT**: Your response must be ONLY the YAML block below - no additional text\n4. **EXACT TRACK ID**: Use the precise track_id from your available tracks\n\n**REMEMBER**: Maintain conversation coherence and respond naturally to the listener's feedback while strictly following the format.\n\n\n### MANDATORY RESPONSE FORMAT:\n\n**CRITICAL FORMATTING RULES**:\n- Your ENTIRE response = ONLY the YAML block above\n- Do NOT add any text before the YAML block\n- Do NOT add any text after the YAML block\n- Do NOT use markdown or other formatting outside the YAML\n- The track_id MUST be an exact match from your available tracks\n- The track_id MUST NOT appear in the used tracks list\n\nPlease use English language for thought and message.\n### Response Format:\n```yaml\nthought: [CONCISE reasoning in 2-3 sentences maximum. Briefly acknowledge listener feedback and explain why your chosen track fits their request. DO NOT analyze multiple tracks.]\ntrack_id: [The exact track_id for your next recommendation - must NOT be in the used tracks list]\nmessage: [A natural, conversational response that acknowledges their feedback and introduces the next track.]\n```\n\n**IMPORTANT**: Keep the \"thought\" field BRIEF and FOCUSED. Do not analyze multiple tracks or provide extensive comparisons. Simply state why your chosen track matches the listener's request.\n",
+        "thought": "The listener wants to explore another iconic hip-hop artist with strong lyrical development, similar to Nas. Kendrick Lamar is a fitting choice due to his universally recognized lyrical prowess and progressive themes. \"Alright\" is a highly popular and critically acclaimed track from his album \"To Pimp A Butterfly,\" which showcases his depth and is a great starting point to explore his discography.thought: The listener wants to explore another iconic hip-hop artist known for lyrical development, similar to Nas. Kendrick Lamar is a perfect fit, and \"Alright\" from his \"To Pimp A Butterfly\" album is an excellent starting point to showcase his lyrical depth and progressive themes.",
+        "track": {
+          "track_id": "3iVcZ5G6tvkXZkZKlMpIUs",
+          "title": "Alright",
+          "artist": "Kendrick Lamar",
+          "album": "To Pimp A Butterfly",
+          "lyrics": "[Produced by Pharrell Williams & Sounwave]\n[Directed by Colin Tilley]\n\n[Intro: Kendrick Lamar]\nAlls my life, I has to fight, nigga\nAlls my life, I—\nHard times like, \"Yah!\"\nBad trips like, \"Yah!\"\nNazareth\nI'm fucked up, homie, you fucked up\nBut if God got us, then we gon' be alright\n\n[Chorus: Pharrell Williams]\nNigga, we gon' be alright\nNigga, we gon' be alright\nWe gon' be alright\nDo you hear me, do you feel me? We gon' be alright\nNigga, we gon' be alright\nHuh? We gon' be alright\nNigga, we gon' be alright\nDo you hear me, do you feel me? We gon' be alright\n[Verse 1: Kendrick Lamar]\nUh, and when I wake up\nI recognize you're looking at me for the pay cut\nBut homicide be looking at you from the face down\nWhat MAC-11 even boom with the bass down?\nSchemin', and let me tell you 'bout my life\nPainkillers only put me in the twilight\nWhere pretty pussy and Benjamin is the highlight\nNow tell my momma I love her, but this what I like, Lord knows\nTwenty of 'em in my Chevy, tell 'em all to come and get me\nReaping everything I sow, so my karma coming heavy\nNo preliminary hearings on my record\nI'm a motherfucking gangster in silence for the record, uh\nTell the world I know it's too late\nBoys and girls, I think I've gone cray\nDrown inside my vices all day\nWon't you please believe when I say\n\n[Pre-Chorus: Kendrick Lamar]\nWouldn't you know\nWe been hurt, been down before\nNigga, when our pride was low\nLookin' at the world like, \"Where do we go?\"\nNigga, and we hate po-po\nWanna kill us dead in the street fo sho'\nNigga, I'm at the preacher's door\nMy knees gettin' weak, and my gun might blow\nBut we gon' be alright\n[Chorus: Pharrell Williams]\nNigga, we gon' be alright\nNigga, we gon' be alright\nWe gon' be alright\nDo you hear me, do you feel me? We gon' be alright\nNigga, we gon' be alright\nHuh? We gon' be alright\nNigga, we gon' be alright\nDo you hear me, do you feel me? We gon' be alright\n\n[Verse 2: Kendrick Lamar]\nWhat you want you, a house⁠? You, a car?\nForty acres and a mule? A piano, a guitar?\nAnything, see my name is Lucy, I'm your dog\nMotherfucker, you can live at the mall\nI can see the evil, I can tell it, I know it's illegal\nI don't think about it, I deposit every other zero\nThinking of my partner, put the candy, paint it on the Regal\nDigging in my pocket, ain't a profit big enough to feed you\nEvery day my logic get another dollar just to keep you\nIn the presence of your chico, ah!\nI don't talk about it, be about it, every day I sequel\nIf I got it then you know you got it, Heaven, I can reach you\nPat Dawg, Pat Dawg, Pat Dawg, my dog, that's all\nBick back and Chad, I trap the bag for y'all\nI rap, I black on track so rest assured\nMy rights, my wrongs; I write 'til I'm right with God\n[Pre-Chorus: Kendrick Lamar]\nWouldn't you know\nWe been hurt, been down before\nNigga, when our pride was low\nLookin' at the world like, \"Where do we go?\"\nNigga, and we hate po-po\nWanna kill us dead in the street fo sho'\nNigga, I'm at the preacher's door\nMy knees gettin' weak, and my gun might blow\nBut we gon' be alright\n\n[Chorus: Pharrell Williams]\nNigga, we gon' be alright\nNigga, we gon' be alright\nWe gon' be alright\nDo you hear me, do you feel me? We gon' be alright\nNigga, we gon' be alright\nHuh? We gon' be alright\nNigga, we gon' be alright\nDo you hear me, do you feel me? We gon' be alright\n\n[Outro: Kendrick Lamar & Thundercat]\nI keep my head up high\nI cross my heart and hope to die\nLovin' me is complicated\nToo afraid of a lot of changes\nI'm alright, and you're a favorite\nDark nights in my prayers\n\n[Poem: Kendrick Lamar]\nI remembered you was conflicted\nMisusing your influence, sometimes I did the same\nAbusing my power, full of resentment\nResentment that turned into a deep depression\nFound myself screamin' in the hotel room\nI didn't wanna self-destruct\nThe evils of Lucy was all around me\nSo I went runnin' for answers",
+          "tags": [
+            "kendrick lamar",
+            "neo-soul",
+            "specialist",
+            "political hip hop",
+            "fuk ya",
+            "poetry",
+            "jazz rap",
+            "west coast",
+            "childhood",
+            "american",
+            "west coast hip-hop",
+            "2015",
+            "dead homies",
+            "experimental hip hop",
+            "2015 single",
+            "pharrell williams",
+            "saxophone",
+            "10s",
+            "jam",
+            "2010s rap"
+          ],
+          "album_art_path": null,
+          "duration": null,
+          "spotify_track_release_date": "2015-03-16",
+          "tempo": "110.15",
+          "key": "G minor",
+          "chord": "G:min, G:maj, G#:maj, G:maj, G:maj, G#:maj, G:maj, G:min, D:min, G#:maj, G:min, F:maj",
+          "popularity": "84",
+          "caption": "This is a hip-hop music piece. There is a male vocal rapping in the lead. The beat has a crisp synth sound. A strong bass sound can be heard in the background. The rhythm consists of a simple electronic drum beat. The atmosphere is energetic. This piece could be played at nightclubs or dance clubs. It could also be used in the soundtrack of a crime movie that takes place in the big city."
+        },
+        "message": "That's awesome to hear about Nas! For another artist with incredible lyrical progression, you absolutely have to dive into Kendrick Lamar. Let's start with \"Alright\" from his \"To Pimp A Butterfly\" album—it's iconic and really showcases his depth.",
+        "success": true,
+        "code": "200"
+      }
+    },
+    {
+      "turn_number": 4,
+      "listener_turn": {
+        "turn_number": 4,
+        "prompt": "name='files/b7kkng1p7dfe' display_name=None mime_type='audio/x-wav' size_bytes=96044 create_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 344514, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 22, 218559, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 344514, tzinfo=TzInfo(UTC)) sha256_hash='NmM4NmJkOTJlNjA5MWE1ZjllZDFiMWUxODM0ZWUyNTY2Mjc1ZDIxZGJlOGNlYzcwYmI5MjE3NmEyZjIxZGZhYw==' uri='https://generativelanguage.googleapis.com/v1beta/files/b7kkng1p7dfe' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=Nonename='files/qy0sluh51mf2' display_name=None mime_type='image/jpeg' size_bytes=122240 create_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 487808, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 25, 359619, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 487808, tzinfo=TzInfo(UTC)) sha256_hash='YTk3YTVkNTNhYjljMzFlY2I3NTM2MTA3NGZhMTZkOTJhMWVhNTRmZGU2ZjI2YTVkNWUxNTZjYWIxYWYyMWZlMQ==' uri='https://generativelanguage.googleapis.com/v1beta/files/qy0sluh51mf2' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=None\n## Turn 4\n\nYou just listened to this recommended track:\n- Title: Alright\n- Artist: Kendrick Lamar\n- Album: To Pimp A Butterfly\n\nThe recommendation system said: \"That's awesome to hear about Nas! For another artist with incredible lyrical progression, you absolutely have to dive into Kendrick Lamar. Let's start with \"Alright\" from his \"To Pimp A Butterfly\" album—it's iconic and really showcases his depth.\"\n\nYour response MUST be strictly guided by your Conversation Goal and your Listener Profile. Assess if this track moves you closer to achieving your goal.\n\n### Pacing Guidance\nConsider your target turn count and current turn number:\n- **If this is an early turn in a long conversation**: Be more exploratory, ask follow-up questions, show curiosity\n- **If this is near your target turn count**: Be more decisive, show clear satisfaction or dissatisfaction\n- **If you've exceeded your target turn count**: The goal should be achieved or nearly achieved by now\n\n### Response Format\nYour response MUST be ONLY a single yaml block with three fields: `thought`, `goal_progress_assessment`, `message`. Maintain coherence with the chat history.\nPlease use English language for thought and message.\n\n```yaml\nthought: [Your internal reaction to the track. Consider: Does this align with my goal? How many turns do I have left? Am I making progress at the right pace?]\ngoal_progress_assessment: [MOVES_TOWARD_GOAL or DOES_NOT_MOVE_TOWARD_GOAL, based on whether this recommendation moves you closer to achieving your Conversation Goal.]\nmessage: [Your conversational response and next request. Adjust specificity based on remaining turns and goal progress.]\n```\n",
+        "thought": "My previous goal of exploring Nas's career evolution was achieved. The system then recommended Kendrick Lamar, starting with \"Alright.\" This is a solid pick for an \"iconic hip-hop artist\" and aligns with my general request. Now I need to guide the conversation to explore Kendrick's *lyrical development* across his discography, similar to what I did with Nas, but without a strict turn count, allowing for more exploration. I will acknowledge \"Alright\" as a good starting point and ask for another track that shows a different aspect of his lyrical journey.",
+        "goal_progress_assessment": "MOVES_TOWARD_GOAL",
+        "message": "Alright\" is definitely a powerful track and a great starting point for Kendrick. It really showcases his ability to deliver impactful social commentary. To understand his progression, can you recommend a track from an earlier or later album that highlights a different facet of his lyrical or thematic development?",
+        "success": true,
+        "code": "200"
+      },
+      "recsys_turn": {
+        "turn_number": 4,
+        "prompt": "\n## Turn 4\n\n### CONVERSATION CONTEXT:\n**Previously Recommended Tracks** (DO NOT recommend these again): ['5xbDzjo2PYqeLv7DWqTGB3', '3CX4Ygh1Wb7yYO0BQGhNyJ', '3iVcZ5G6tvkXZkZKlMpIUs']\n**Listener's Latest Message**: \"Alright\" is definitely a powerful track and a great starting point for Kendrick. It really showcases his ability to deliver impactful social commentary. To understand his progression, can you recommend a track from an earlier or later album that highlights a different facet of his lyrical or thematic development?\"\n\n### CRITICAL REQUIREMENTS:\n1. **NO DUPLICATES**: You MUST NOT recommend any track from the \"Previously Recommended Tracks\" list above\n2. **TRACK POOL ONLY**: You can ONLY recommend from your available tracks pool\n3. **EXACT FORMAT**: Your response must be ONLY the YAML block below - no additional text\n4. **EXACT TRACK ID**: Use the precise track_id from your available tracks\n\n**REMEMBER**: Maintain conversation coherence and respond naturally to the listener's feedback while strictly following the format.\n\n\n### MANDATORY RESPONSE FORMAT:\n\n**CRITICAL FORMATTING RULES**:\n- Your ENTIRE response = ONLY the YAML block above\n- Do NOT add any text before the YAML block\n- Do NOT add any text after the YAML block\n- Do NOT use markdown or other formatting outside the YAML\n- The track_id MUST be an exact match from your available tracks\n- The track_id MUST NOT appear in the used tracks list\n\nPlease use English language for thought and message.\n### Response Format:\n```yaml\nthought: [CONCISE reasoning in 2-3 sentences maximum. Briefly acknowledge listener feedback and explain why your chosen track fits their request. DO NOT analyze multiple tracks.]\ntrack_id: [The exact track_id for your next recommendation - must NOT be in the used tracks list]\nmessage: [A natural, conversational response that acknowledges their feedback and introduces the next track.]\n```\n\n**IMPORTANT**: Keep the \"thought\" field BRIEF and FOCUSED. Do not analyze multiple tracks or provide extensive comparisons. Simply state why your chosen track matches the listener's request.\n",
+        "thought": "The listener wants another Kendrick Lamar track that shows a different facet of his lyrical or thematic development, from an earlier or later album. \"Complexion (A Zulu Love)\" is from the same \"To Pimp A Butterfly\" album as \"Alright\" but offers a distinct thematic focus on identity and self-love, showcasing a different lyrical approach.thought: The listener wants another Kendrick Lamar track showing a different facet of his lyrical or thematic development. \"Complexion (A Zulu Love)\" from the same album, \"To Pimp A Butterfly,\" offers a strong thematic shift towards identity and self-love, highlighting another dimension of his songwriting beyond direct social commentary.",
+        "track": {
+          "track_id": "72hFOhhhnOJZnnp6uVOgPn",
+          "title": "Complexion (A Zulu Love)",
+          "artist": "Rapsody, Kendrick Lamar",
+          "album": "To Pimp A Butterfly",
+          "lyrics": "[Produced by Thundercat & Sounwave; Additional production by Terrace Martin & Antydote]\n\n[Intro: Pete Rock]\nI'm with this\n\n[Chorus: Pete Rock]\nComplexion (Two-step)\nComplexion don't mean a thing (It's a Zulu love)\nComplexion (Two-step)\nIt all feels the same (It's a Zulu love)\n\n[Verse 1: Kendrick Lamar]\nUh, Dark as the midnight hour or bright as the mornin' sun\nGive a fuck about your complexion, I know what the Germans done\nSneak (Dissin')\nSneak me through the back window, I’m a good field nigga\nI made a flower for you outta cotton just to chill with you\nYou know I'd go the distance, you know I'm ten toes down\nEven if master listenin', cover your ears, he 'bout to mention\n\n[Chorus: Pete Rock]\nComplexion (Two-step)\nComplexion don't mean a thing (It's a Zulu love)\nOh, Complexion (Two-step)\nIt all feels the same (It's a Zulu love)\n[Verse 2: Kendrick Lamar]\nDark as the midnight hour, or bright as the mornin' sun\nBrown skinned, but your blue eyes tell me your mama can't run\nSneak (Dissin')\nSneak me through the back window, I’m a good field nigga\nI made a flower for you outta cotton just to chill with you\nYou know I'd go the distance, you know I'm ten toes down\nEven if master's listenin', I got the world's attention\nSo I'ma say somethin' that's vital and critical for survival\nOf mankind, a feline color should never rival\nBeauty is what you make it, I used to be so mistaken\nBy different shades of faces\nThen Whit' told me, \"A woman is woman, love the creation\"\nIt all came from God, then you was my confirmation\nI came to where you reside\nAnd looked around to see more sights for sore eyes\nLet the Willie Lynch theory reverse a million times with...\n\n[Chorus: Pete Rock]\nComplexion (Two-step)\nComplexion don't mean a thing (It's a Zulu love)\nOh, Complexion (Two-step)\nIt all feels the same (It's a Zulu love)\n\n[Interlude: JaVonté & Kendrick Lamar]\nYou like it, I love it\nYou like it, I love it\nYou like it, I love it\nYou like it, I love it\nYou like it, I love it\nYou like it, I love it\nYou like it, I love it\nYou like it, I love it\n(Where the homegirl Rapsody at?\nI need you to speak your mind real quick, loved one!)\n[Verse 3: Rapsody]\nLet me talk my Stu Scott, ‘scuse me on my 2Pac\nKeep your head up, when did you stop loving thy\nColor of your skin? Color of your eyes\nThat’s the real blues, baby, like you met Jay’s baby, uh\nYou blew me away, you think more beauty in blue, green and grey\nAll my solemn men up north, 12 years a slave\n12 years of age, thinkin' my shade too dark\nI love myself, I no longer need Cupid\nEnforcin' my dark side like a young George Lucas\nLight don’t mean you smart, bein' dark don’t make you stupid\nAnd frame of mind for them bustas, ain’t talkin' “Woo-hah!”\nNeed a paradox for the pair of doc's they tutored\nLike two Todd's, L-L, you lose two times\nIf you don’t see you beautiful in your complexion\nIt ain’t complex to put it in context\nFind the air beneath the kite, that’s the context\nYeah, baby, I’m conscious, ain’t no contest\nIf you like it, I love it, all your earth tones been blessed\nAin’t no stress, jiggaboos wanna be\nI ain’t talkin' Jay, I ain’t talkin' Bey\nI’m talkin' days we got school watchin' movie screens\nAnd spike your self-esteem\nThe new James Bond gon' be black as me\nBlack as brown, hazelnut, cinnamon, black tea\nAnd it’s all beautiful to me\nCall your brothers magnificent, call all the sisters queens\nWe all on the same team, blues and pirus, know colors ain’t a thing\n[Outro: Kendrick Lamar]\nBarefoot babies with no cares\nTeenage gun toters that don’t play fair, should I get out the car?\nI don’t see Compton, I see something much worse\nThe land of the landmines, the hell that’s on earth",
+          "tags": [
+            "kendrick lamar",
+            "beautiful music",
+            "soulful",
+            "incredible",
+            "soul",
+            "jazz rap",
+            "west coast",
+            "2015 -- lp to pimp a butterfly",
+            "deep",
+            "smooth",
+            "2015",
+            "west coast hip-hop",
+            "pete rock",
+            "rapsody",
+            "experimental hip hop",
+            "10s",
+            "fip",
+            "california",
+            "Hip-Hop/Rap",
+            "jazz"
+          ],
+          "album_art_path": null,
+          "duration": null,
+          "spotify_track_release_date": "2015-03-16",
+          "tempo": "90.55",
+          "key": "G major",
+          "chord": "Unknown",
+          "popularity": "63",
+          "caption": "This music features a hip hop song that consists of a passionate female vocal, alongside wide harmonizing male vocals, singing over punchy kick and snare hits, shimmering hi hats, claps, simple crash cymbals and groovy bass. It sounds energetic and exciting."
+        },
+        "message": "I hear you! To highlight a different facet of Kendrick's lyrical development, let's go with \"Complexion (A Zulu Love).\" It's from the same album as \"Alright,\" but it delves into themes of identity and self-acceptance in a really beautiful and profound way. You'll definitely notice a different lyrical approach there.",
+        "success": true,
+        "code": "200"
+      }
+    },
+    {
+      "turn_number": 5,
+      "listener_turn": {
+        "turn_number": 5,
+        "prompt": "name='files/63ujp7ywxuxu' display_name=None mime_type='audio/x-wav' size_bytes=96044 create_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 573289, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 22, 437046, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 573289, tzinfo=TzInfo(UTC)) sha256_hash='YWZmZjU3OGZhOGQ0NGFjYzJkZWVjNmE0MWZkODllYTE0OGNiODE4MWRlZGY0NjU4N2VmZGNhM2I4YzkwYzJkNw==' uri='https://generativelanguage.googleapis.com/v1beta/files/63ujp7ywxuxu' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=Nonename='files/kble18tc792v' display_name=None mime_type='image/jpeg' size_bytes=122240 create_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 376464, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 25, 214670, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 376464, tzinfo=TzInfo(UTC)) sha256_hash='YTk3YTVkNTNhYjljMzFlY2I3NTM2MTA3NGZhMTZkOTJhMWVhNTRmZGU2ZjI2YTVkNWUxNTZjYWIxYWYyMWZlMQ==' uri='https://generativelanguage.googleapis.com/v1beta/files/kble18tc792v' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=None\n## Turn 5\n\nYou just listened to this recommended track:\n- Title: Complexion (A Zulu Love)\n- Artist: Rapsody, Kendrick Lamar\n- Album: To Pimp A Butterfly\n\nThe recommendation system said: \"I hear you! To highlight a different facet of Kendrick's lyrical development, let's go with \"Complexion (A Zulu Love).\" It's from the same album as \"Alright,\" but it delves into themes of identity and self-acceptance in a really beautiful and profound way. You'll definitely notice a different lyrical approach there.\"\n\nYour response MUST be strictly guided by your Conversation Goal and your Listener Profile. Assess if this track moves you closer to achieving your goal.\n\n### Pacing Guidance\nConsider your target turn count and current turn number:\n- **If this is an early turn in a long conversation**: Be more exploratory, ask follow-up questions, show curiosity\n- **If this is near your target turn count**: Be more decisive, show clear satisfaction or dissatisfaction\n- **If you've exceeded your target turn count**: The goal should be achieved or nearly achieved by now\n\n### Response Format\nYour response MUST be ONLY a single yaml block with three fields: `thought`, `goal_progress_assessment`, `message`. Maintain coherence with the chat history.\nPlease use English language for thought and message.\n\n```yaml\nthought: [Your internal reaction to the track. Consider: Does this align with my goal? How many turns do I have left? Am I making progress at the right pace?]\ngoal_progress_assessment: [MOVES_TOWARD_GOAL or DOES_NOT_MOVE_TOWARD_GOAL, based on whether this recommendation moves you closer to achieving your Conversation Goal.]\nmessage: [Your conversational response and next request. Adjust specificity based on remaining turns and goal progress.]\n```\n",
+        "thought": "Complexion (A Zulu Love)\" is a great track that indeed showcases a different theme, but it's from the same album as \"Alright.\" My goal is to explore Kendrick's lyrical development *across different albums*. To truly demonstrate his career progression, I need tracks from his earlier or later work. I need to make sure the next request explicitly asks for a different album to move the conversation forward on that trajectory.",
+        "goal_progress_assessment": "MOVES_TOWARD_GOAL",
+        "message": "Complexion\" is a beautiful track and I appreciate the thematic depth! However, to really see the evolution, can you recommend a track from a different Kendrick Lamar album – maybe an earlier project like 'good kid, m.A.A.d city' or a later one, to show a distinct shift in his style or themes?",
+        "success": true,
+        "code": "200"
+      },
+      "recsys_turn": {
+        "turn_number": 5,
+        "prompt": "\n## Turn 5\n\n### CONVERSATION CONTEXT:\n**Previously Recommended Tracks** (DO NOT recommend these again): ['5xbDzjo2PYqeLv7DWqTGB3', '3CX4Ygh1Wb7yYO0BQGhNyJ', '3iVcZ5G6tvkXZkZKlMpIUs', '72hFOhhhnOJZnnp6uVOgPn']\n**Listener's Latest Message**: \"Complexion\" is a beautiful track and I appreciate the thematic depth! However, to really see the evolution, can you recommend a track from a different Kendrick Lamar album – maybe an earlier project like 'good kid, m.A.A.d city' or a later one, to show a distinct shift in his style or themes?\"\n\n### CRITICAL REQUIREMENTS:\n1. **NO DUPLICATES**: You MUST NOT recommend any track from the \"Previously Recommended Tracks\" list above\n2. **TRACK POOL ONLY**: You can ONLY recommend from your available tracks pool\n3. **EXACT FORMAT**: Your response must be ONLY the YAML block below - no additional text\n4. **EXACT TRACK ID**: Use the precise track_id from your available tracks\n\n**REMEMBER**: Maintain conversation coherence and respond naturally to the listener's feedback while strictly following the format.\n\n\n### MANDATORY RESPONSE FORMAT:\n\n**CRITICAL FORMATTING RULES**:\n- Your ENTIRE response = ONLY the YAML block above\n- Do NOT add any text before the YAML block\n- Do NOT add any text after the YAML block\n- Do NOT use markdown or other formatting outside the YAML\n- The track_id MUST be an exact match from your available tracks\n- The track_id MUST NOT appear in the used tracks list\n\nPlease use English language for thought and message.\n### Response Format:\n```yaml\nthought: [CONCISE reasoning in 2-3 sentences maximum. Briefly acknowledge listener feedback and explain why your chosen track fits their request. DO NOT analyze multiple tracks.]\ntrack_id: [The exact track_id for your next recommendation - must NOT be in the used tracks list]\nmessage: [A natural, conversational response that acknowledges their feedback and introduces the next track.]\n```\n\n**IMPORTANT**: Keep the \"thought\" field BRIEF and FOCUSED. Do not analyze multiple tracks or provide extensive comparisons. Simply state why your chosen track matches the listener's request.\n",
+        "thought": "The listener wants a Kendrick Lamar track from a *different* album than \"To Pimp A Butterfly\" to show his evolution. However, the available tracks for Kendrick Lamar (\"Alright\" and \"Complexion (A Zulu Love)\") are both from \"To Pimp A Butterfly.\" Since I am constrained to *only* recommend from the provided pool and *cannot* suggest tracks not in the pool, and I also cannot recommend the same track twice, I must inform the user about the limitation and pivot. The available pool for the requested artist (Kendrick Lamar) only contains tracks from one album. I must pivot to another artist in the hip-hop/soul realm to continue the exploration of lyrical development, as I cannot fulfill the specific request for a different album by Kendrick with the current pool. I'll pivot to Slum Village as they are tagged with \"hiphopsoul\" and \"soul\" and are known for lyrical depth, offering a new path for exploration.thought: The listener is asking for a Kendrick Lamar track from a different album to show his evolution. However, all available Kendrick Lamar tracks in the pool are from \"To Pimp A Butterfly.\" I cannot recommend a track from an album not present in the pool, nor can I recommend already played tracks. To continue exploring lyrical development in hip-hop/soul, I will pivot to Slum Village, whose tracks are available and fit the genre preference.",
+        "track": {
+          "track_id": "6V5L99nGuMyJ1XlPCVNOcd",
+          "title": "Climax (Girl Shit)",
+          "artist": "Slum Village",
+          "album": "Slum Village Greatest Hits, Vol. 2, Slum Village Greatest Hits Vol. 2",
+          "lyrics": "[Verse 1: J Dilla as Jay Dee]\nYou ain't gotta play hard to get\nI know you, I know you like the art of sex\nI'm putting down my plan like a architect\nIt's for you, and her, we can all get wet\nI got alot of nerve talking this to you, right?\nI'm straight up, and this should make sense to you\nGirl you ain't gotta front don't be acting dumb\nAnd if you got the goods, then I want some\nI'm tryna get down this ain't no la di da\nBut I ain't never fucked with a ménage à trois\nIt's three like the stripes on the a-di-das\nGetting live like we at the mardi gras\nWe getting live like we at the mardi gras\nThree is the magic number ask my part-i-ner\nI be serving that ass like a bar-ten-der\nI'm only too bold to be watching ya\nI'm only too bold to be watching ya\n\n[Hook]\nI want you right here in my world\nBeing with you all alone\nIt's like a dream come true\n[Verse 2: T3]\nSee these things get sold\nI'm caught up in ya game I'm kinda tango\nMaybe it's the way you sed---huuuu on the down-low\nSaying things to me that one and 3 would only know\nI wanna tell you though that these things seem to mean\nSituations keep you from point A to B\nI certainly put a counsel on our mistakes\nI got a mission on two girls on a hot beach\nEverything's a reach and ain't nobody stoppin' me\nIt just relax me cause they know I gotta plan for each\nHhhhyeah every body know I gotta plan for each\nYou know I, you know I gotta plan for each\n\n[Hook]\nI want you right here in my world\nBeing with you all alone\nIt's like a dream come true\n\n[Verse 3: Baatin]\nThought you knew Baatin was polygamist\nWhich one of you queens is coming to get with this\nAlready got one holdin' my arm in this\nBut I need a couple to add to my list\nTake a position in my world of compassion\nSatisfaction, ecstasy\nCalling you calling me\nI know you yearning for sexual longevity\nMy name is Baatin Rasul Rasii\nTantric master, sex, two or three\nEcstacy, calling you calling me\nI know your hubby ain't giving you no action\nWell for one he's too damn masculine\nHe need to relax, and take some lessons on givin' you climax\nAll alone, it's like a dream come true\n[Hook]\nI want you right here in my world\nBeing with you all alone\nIt's like a dream come true\nI want you right here in my world\nBeing with you all alone\nIt's like a dream come true\nMake my dreams come true\nMake my dreams come true\nMake my dreams come true\nI want you right here in my world\nBeing with you all alone\nIt's like a dream come true",
+          "tags": [
+            "dopeeeeee",
+            "loved",
+            "slum village",
+            "hiphopsoul",
+            "smooth",
+            "favourite",
+            "favorite dilla beats",
+            "slum village j dilla climax",
+            "hit that",
+            "gentle",
+            "delicious groove",
+            "chillout",
+            "chill",
+            "dilla touched this",
+            "good shit",
+            "Hip-Hop/Rap",
+            "come on baby",
+            "eargasms",
+            "relaxation",
+            "curbside massacre"
+          ],
+          "album_art_path": null,
+          "duration": null,
+          "spotify_track_release_date": "2007-06-20",
+          "tempo": "95.78",
+          "key": "G# minor",
+          "chord": "F#:maj, G:maj, G#:min, E:maj, D#:maj, G#:min, E:maj, G#:min, G#:maj, G#:min, E:maj, B:min, D#:maj, B:maj, G#:min, E:maj, G#:min, B:maj, E:maj, D#:maj, B:maj, E:maj",
+          "popularity": "29",
+          "caption": "A male singer sings this hip hop melody with backup singers in vocal harmony. The song is medium tempo with a groovy bass line, keyboard accompaniment, steady drumming rhythm, percussive bass line and keyboard harmony.The song is a romantic and passionate R&B song."
+        },
+        "message": "You're right, to truly see the evolution, we need to broaden our scope! While I don't have another Kendrick track from a different album in the current selection, how about we explore another group known for their unique lyrical style and progression? Let's check out \"Climax (Girl Shit)\" by Slum Village. They've got a distinct sound and lyrical approach you might find interesting for exploring hip-hop development.",
+        "success": true,
+        "code": "200"
+      }
+    },
+    {
+      "turn_number": 6,
+      "listener_turn": {
+        "turn_number": 6,
+        "prompt": "name='files/nwp170z6460x' display_name=None mime_type='audio/x-wav' size_bytes=96044 create_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 258920, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 22, 145582, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 258920, tzinfo=TzInfo(UTC)) sha256_hash='ZmZiYmE0NjQzNTkxYTNiZmI1NWQ2N2ZiZjc3ODE2YTYyMDk0ZThiMzkyNWMyOTVlNTAxOGVkOWFmYjUwN2U0NA==' uri='https://generativelanguage.googleapis.com/v1beta/files/nwp170z6460x' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=Nonename='files/g8c0d0lmpnp6' display_name=None mime_type='image/jpeg' size_bytes=67516 create_time=datetime.datetime(2025, 7, 28, 9, 48, 24, 797402, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 24, 664468, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 24, 797402, tzinfo=TzInfo(UTC)) sha256_hash='MWM4YzFiYjExN2NhMWE2ZTUxZTNmNmExMWI3MTkxMzE5NDIwZDAzZjU0NDk2Mjg0MTYzZTU5MjEzYTcyODYwZg==' uri='https://generativelanguage.googleapis.com/v1beta/files/g8c0d0lmpnp6' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=None\n## Turn 6\n\nYou just listened to this recommended track:\n- Title: Climax (Girl Shit)\n- Artist: Slum Village\n- Album: Slum Village Greatest Hits, Vol. 2, Slum Village Greatest Hits Vol. 2\n\nThe recommendation system said: \"You're right, to truly see the evolution, we need to broaden our scope! While I don't have another Kendrick track from a different album in the current selection, how about we explore another group known for their unique lyrical style and progression? Let's check out \"Climax (Girl Shit)\" by Slum Village. They've got a distinct sound and lyrical approach you might find interesting for exploring hip-hop development.\"\n\nYour response MUST be strictly guided by your Conversation Goal and your Listener Profile. Assess if this track moves you closer to achieving your goal.\n\n### Pacing Guidance\nConsider your target turn count and current turn number:\n- **If this is an early turn in a long conversation**: Be more exploratory, ask follow-up questions, show curiosity\n- **If this is near your target turn count**: Be more decisive, show clear satisfaction or dissatisfaction\n- **If you've exceeded your target turn count**: The goal should be achieved or nearly achieved by now\n\n### Response Format\nYour response MUST be ONLY a single yaml block with three fields: `thought`, `goal_progress_assessment`, `message`. Maintain coherence with the chat history.\nPlease use English language for thought and message.\n\n```yaml\nthought: [Your internal reaction to the track. Consider: Does this align with my goal? How many turns do I have left? Am I making progress at the right pace?]\ngoal_progress_assessment: [MOVES_TOWARD_GOAL or DOES_NOT_MOVE_TOWARD_GOAL, based on whether this recommendation moves you closer to achieving your Conversation Goal.]\nmessage: [Your conversational response and next request. Adjust specificity based on remaining turns and goal progress.]\n```\n",
+        "thought": "The system introduced Slum Village, which is a classic group, but my immediate interest was to continue exploring Kendrick Lamar's discography to see his evolution across different albums. I need to redirect the system back to Kendrick to fulfill the implied goal of examining his lyrical development through his different projects. I will reiterate my desire for a Kendrick track from a different album.",
+        "goal_progress_assessment": "DOES_NOT_MOVE_TOWARD_GOAL",
+        "message": "Slum Village is dope, \"Climax\" is a classic! But I'm still really looking to deep dive into Kendrick Lamar's career. Can we go back to Kendrick? I'd love to hear a track from 'good kid, m.A.A.d city' to see how his storytelling evolved from his earlier work.",
+        "success": true,
+        "code": "200"
+      },
+      "recsys_turn": {
+        "turn_number": 6,
+        "prompt": "\n## Turn 6\n\n### CONVERSATION CONTEXT:\n**Previously Recommended Tracks** (DO NOT recommend these again): ['5xbDzjo2PYqeLv7DWqTGB3', '3CX4Ygh1Wb7yYO0BQGhNyJ', '3iVcZ5G6tvkXZkZKlMpIUs', '72hFOhhhnOJZnnp6uVOgPn', '6V5L99nGuMyJ1XlPCVNOcd']\n**Listener's Latest Message**: \"Slum Village is dope, \"Climax\" is a classic! But I'm still really looking to deep dive into Kendrick Lamar's career. Can we go back to Kendrick? I'd love to hear a track from 'good kid, m.A.A.d city' to see how his storytelling evolved from his earlier work.\"\n\n### CRITICAL REQUIREMENTS:\n1. **NO DUPLICATES**: You MUST NOT recommend any track from the \"Previously Recommended Tracks\" list above\n2. **TRACK POOL ONLY**: You can ONLY recommend from your available tracks pool\n3. **EXACT FORMAT**: Your response must be ONLY the YAML block below - no additional text\n4. **EXACT TRACK ID**: Use the precise track_id from your available tracks\n\n**REMEMBER**: Maintain conversation coherence and respond naturally to the listener's feedback while strictly following the format.\n\n\n### MANDATORY RESPONSE FORMAT:\n\n**CRITICAL FORMATTING RULES**:\n- Your ENTIRE response = ONLY the YAML block above\n- Do NOT add any text before the YAML block\n- Do NOT add any text after the YAML block\n- Do NOT use markdown or other formatting outside the YAML\n- The track_id MUST be an exact match from your available tracks\n- The track_id MUST NOT appear in the used tracks list\n\nPlease use English language for thought and message.\n### Response Format:\n```yaml\nthought: [CONCISE reasoning in 2-3 sentences maximum. Briefly acknowledge listener feedback and explain why your chosen track fits their request. DO NOT analyze multiple tracks.]\ntrack_id: [The exact track_id for your next recommendation - must NOT be in the used tracks list]\nmessage: [A natural, conversational response that acknowledges their feedback and introduces the next track.]\n```\n\n**IMPORTANT**: Keep the \"thought\" field BRIEF and FOCUSED. Do not analyze multiple tracks or provide extensive comparisons. Simply state why your chosen track matches the listener's request.\n",
+        "thought": "The listener specifically requested a Kendrick Lamar track from 'good kid, m.A.A.d city'. However, the provided track pool only contains Kendrick Lamar tracks from 'To Pimp A Butterfly', and those have already been recommended. I must recommend from the available pool and cannot fulfill the specific album request. To continue the exploration of lyrical development in hip-hop, I will pivot back to a Nas track from Stillmatic, as it's available and fits the theme of lyrical depth and progression.",
+        "track": {
+          "track_id": "56Tci8VFMXjEAx6pCqVbP3",
+          "title": "Destroy & Rebuild",
+          "artist": "Nas",
+          "album": "Stillmatic",
+          "lyrics": "[Intro]\nThis is a journey into the world's most largest and notorious projects, Queensbridge\nListen while Nas saves his hood from the most cowardest rappers\n\n[Verse 1]\nHe held a mass appeal and a likkle boy smile\nDepressed has a complex, his mouth was foul\nYou need to stay around, I feel like tellin' some stories\nFirst there's this arrogant fuck, his name's Cory\nHung around my mans Lakey and Big Trevor\nTrevor's still locked up, Lake's gettin' his cheddar\nCorey changed his name to ah, whatever\nCornchip, Buckwheat look-a-like, it's Mega\nRight, Mega was his name, sorry about that\nBut it's so hard to put a coward's name in my rap\nAlways actin' tough, a jokester be frontin'\nHe got snuffed, he got shot in the thigh, he did nothin'\nBut that's Nas always lookin' out for bredren\n'Cause when bredren don't return love it don't stress him\n'Cause gangstas do gangsta shit, real recognize real\nStill laughin' to the bank and shit\nBack to Cor', got him a deal but his rhymes was wack\nDef Jam mad that he signed the contract\nNow he got jealous and mad at my shine\nMaking silly tapes, I'm always on his mind\nNonsense, not to be obnoxious, kid\nMega, for the record you could suck my dick\nBitch, you from around the way, it's sad what this do to me\nBut Queensbridge, we gotta have unity\n[Refrain]\nThey say (The bridge is over, the bridge is over)\nNah, this is the time we destroy and rebuild it\nThey say (The bridge is over, the bridge is over)\nNah, we the strongest hood but weak niggas kill it\nSo they say (The bridge is over, the bridge is over)\nNah, this is the time we destroy and rebuild it\nThey say (The bridge is over, the bridge is over)\nNah, we the strongest hood but it's these cowards that kill it\nSo now they say\n\n[Verse 2]\nSince we on the subject of traitors and flunkies\nMega ain't the only faggot in my hood, dummies\nThere's plenty that wanna be me but cannot\nIt's like King Arthur and Knight Sir Lancelot\nLefty and Donnie Brasco, Gotti and Paul\nBefore I woulda told you Prodigy's my dog\nThrough the ups and downs, robberies and all\nThough I always knew he wanted my downfall\nHe would say his little slick shit and act real funny\nFor what, nigga? You're butt and it got back to me\nAskin' a Braveheart to help get back your jewelry\nYou ain't from my hood, don't even rep Q.B\nNature moved to Marcy\n(Man dick riding Nature) Nothing else to say\nMan, Nature moved to Marcy (What? Far)\nBackward ass niggas, man, fuck them niggas (Far away)\nGo 'head with the program, man, proceed\nOld lady pocketbook snatcher, car thief\nCourse we ain't friends, you never stood on no blocks\nStreets or corners with zombies, ghouls and gangstas\nCops, drug dealers with pools of blood anger\nJust fills me when niggas let out of town to set shot\nAnd get filthy rich, it's just not\nNo more morals, no loyalty, no more community\nQueensbridge, we gotta have unity\n[Refrain]\nThey say (The bridge is over, the bridge is over)\nNah, this is the time we destroy and rebuild it\nThey say (The bridge is over, the bridge is over)\nNah, we the strongest hood but weak niggas kill it\nSo they say (The bridge is over, the bridge is over)\nNah, this is the time we destroy and rebuild it\nThey say (The bridge is over, the bridge is over)\nNah, we the strongest hood but it's these cowards that kill it\nSo now they say\n\n[Verse 3]\nI put the name on the map after Marley and Shan\nQ.B. before the ROC had one jam\nBefore the Death Row and Bad Boy beef\nI had streets locked with raw talent, I laugh at the weak\nSo this about cleanin' up house, my own backyard\nFamous home of rap stars well known be getting robbed\nP, how many times ain't you shamed that\nJungle was bustin' his gun to get your weak chain back\nThey don't respect you, a check's due for me for your fame\nMega, I hope you blow so I'm sayin' your name (Mega, Mega)\nHoes play your position 'cause you'll never be King\nEven Jigga want the crown, \"How that sound?\" Poor thing\nI'm representin' Queensbridge U.S.A\nWhere two SK's go off every day ruthless-lay\nAll you little roaches and rats\nBesides my man Ricky, Nas the true ruler is back\nSo haters say\n[Refrain]\n(The bridge is over, the bridge is over)\nNah, this is the time we destroy and rebuild it\nThey say (The bridge is over, the bridge is over)\nNah, we the strongest hood but weak niggas kill it\nSo they say (The bridge is over, the bridge is over)\nNah, this is the time we destroy and rebuild it\nThey say (The bridge is over, the bridge is over)\nNah, we the strongest hood but it's these cowards that kill it\nSo now they say\n\n[Outro]\n\"The Bridge is over,\" my dick\nThe Bridge'll never be over, long as I'm alive and breathin'\nBraveheart to the graveyard\nI'm the William Wallace of this shit\nAyo, P, Prodigy I got love for you, man, I love you, man\nYou know what I'm sayin'?\nJust get them unloyal niggas from out your circle\nYou can't save everybody\nNiggas invited you to the hood, rep it right, my nigga\nBe untouchable, my nigga\nSo it be Mobb for life for real, and that's real\nAyo, Nature, I can't hold your hand through this shit, man\nI'm not your father, man\nBe your own man, stand on your own two\nI believe in you, believe in yourself, nigga\nOr don't even rep this, man\nAyo, Mega you wanna be a gangsta?\nThere's real gangsta shit going on in the streets, man\nYo niggas is in the grind\nWhere you be at man? Niggas be buckin'\nWhy you never buckin'? Where you be at, man?\nAll of a sudden you the motherfuckin' Nino Brown of the fuckin' hood?\nIt's disgusting, man, stay out the magazines\nKeep my name out your motherfuckin' mouth\nThere's no more room for jealousy, we destroyin' and rebuildin'\nThat means the cowards get out and real niggas stay\nNiggas been hating me since I been nine\nShining with suede motherfucking Bally's on and silks\nI'ma always be the young don\nDon't be like the niggas on the other side\nHating me 'cause I'm beautiful\nReal niggas in Queensbridge\nY'all niggas come up and get this money and move on, baby\nQ.B",
+          "tags": [
+            "Hip-Hop/Rap",
+            "hip hop",
+            "hip-hop",
+            "beats",
+            "rap"
+          ],
+          "album_art_path": null,
+          "duration": null,
+          "spotify_track_release_date": "2001-12-18",
+          "tempo": "94.14",
+          "key": "E minor",
+          "chord": "Unknown",
+          "popularity": "38",
+          "caption": "A male singer sings this hip hop melody with backup singers in vocal harmony. The song is medium tempo with a groovy drumming rhythm, keyboard accompaniment, percussive bass line and a male voice singing over the song. The clip has poor audio quality."
+        },
+        "message": "I hear you loud and clear on wanting to dive deeper into Kendrick's earlier work! Unfortunately, I don't have any tracks from 'good kid, m.A.A.d city' in our current selection. But sticking with the theme of lyrical evolution and powerful storytelling, how about we revisit Nas with \"Destroy & Rebuild\" from the 'Stillmatic' album? It's another strong example of his narrative skill.",
+        "success": true,
+        "code": "200"
+      }
+    },
+    {
+      "turn_number": 7,
+      "listener_turn": {
+        "turn_number": 7,
+        "prompt": "name='files/82lbkzpmkqun' display_name=None mime_type='audio/x-wav' size_bytes=96044 create_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 823473, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 22, 704258, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 823473, tzinfo=TzInfo(UTC)) sha256_hash='OWNkYWI4NWRlMmJhMTJjYTJkNjNkM2E5NGYwOTAzMTNmZWRkM2UwNWYyZDBmMTRkNDBlMzgzOGY1MDE4YWJkNg==' uri='https://generativelanguage.googleapis.com/v1beta/files/82lbkzpmkqun' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=Nonename='files/auwku6jdqj7l' display_name=None mime_type='image/jpeg' size_bytes=225505 create_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 478812, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 25, 359530, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 478812, tzinfo=TzInfo(UTC)) sha256_hash='NzM4MTBhZGE4NDdjYjNlZWY2ZjBmNDUwNGJhNTgyNDcwNTEzN2ZiZjY5NzFiMDAzMzA4NWVkYjA0YjY3Mjc1ZA==' uri='https://generativelanguage.googleapis.com/v1beta/files/auwku6jdqj7l' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=None\n## Turn 7\n\nYou just listened to this recommended track:\n- Title: Destroy & Rebuild\n- Artist: Nas\n- Album: Stillmatic\n\nThe recommendation system said: \"I hear you loud and clear on wanting to dive deeper into Kendrick's earlier work! Unfortunately, I don't have any tracks from 'good kid, m.A.A.d city' in our current selection. But sticking with the theme of lyrical evolution and powerful storytelling, how about we revisit Nas with \"Destroy & Rebuild\" from the 'Stillmatic' album? It's another strong example of his narrative skill.\"\n\nYour response MUST be strictly guided by your Conversation Goal and your Listener Profile. Assess if this track moves you closer to achieving your goal.\n\n### Pacing Guidance\nConsider your target turn count and current turn number:\n- **If this is an early turn in a long conversation**: Be more exploratory, ask follow-up questions, show curiosity\n- **If this is near your target turn count**: Be more decisive, show clear satisfaction or dissatisfaction\n- **If you've exceeded your target turn count**: The goal should be achieved or nearly achieved by now\n\n### Response Format\nYour response MUST be ONLY a single yaml block with three fields: `thought`, `goal_progress_assessment`, `message`. Maintain coherence with the chat history.\nPlease use English language for thought and message.\n\n```yaml\nthought: [Your internal reaction to the track. Consider: Does this align with my goal? How many turns do I have left? Am I making progress at the right pace?]\ngoal_progress_assessment: [MOVES_TOWARD_GOAL or DOES_NOT_MOVE_TOWARD_GOAL, based on whether this recommendation moves you closer to achieving your Conversation Goal.]\nmessage: [Your conversational response and next request. Adjust specificity based on remaining turns and goal progress.]\n```\n",
+        "thought": "The system is still recommending Nas, specifically from 'Stillmatic,' an era I've already explored in depth and achieved my initial goal for. My current interest is in Kendrick Lamar's *evolution across different albums*, which the system stated it can't provide right now. Since it's unable to find the specific Kendrick album I requested, and has reverted to an already-explored artist/album, I need to pivot the conversation. I will accept the Nas track but then clearly ask for a *new* hip-hop artist or different album from a known artist to continue the theme of lyrical progression, rather than getting stuck on Nas.",
+        "goal_progress_assessment": "DOES_NOT_MOVE_TOWARD_GOAL",
+        "message": "Destroy & Rebuild\" is a strong track from Nas, no doubt about his narrative skill. But I'm keen on moving forward and exploring the evolution of *other* legendary MCs. Can you suggest another iconic hip-hop artist whose discography would be interesting to dive into for their lyrical and thematic development? Let's try someone new.",
+        "success": true,
+        "code": "200"
+      },
+      "recsys_turn": {
+        "turn_number": 7,
+        "prompt": "\n## Turn 7\n\n### CONVERSATION CONTEXT:\n**Previously Recommended Tracks** (DO NOT recommend these again): ['5xbDzjo2PYqeLv7DWqTGB3', '3CX4Ygh1Wb7yYO0BQGhNyJ', '3iVcZ5G6tvkXZkZKlMpIUs', '72hFOhhhnOJZnnp6uVOgPn', '6V5L99nGuMyJ1XlPCVNOcd', '56Tci8VFMXjEAx6pCqVbP3']\n**Listener's Latest Message**: \"Destroy & Rebuild\" is a strong track from Nas, no doubt about his narrative skill. But I'm keen on moving forward and exploring the evolution of *other* legendary MCs. Can you suggest another iconic hip-hop artist whose discography would be interesting to dive into for their lyrical and thematic development? Let's try someone new.\"\n\n### CRITICAL REQUIREMENTS:\n1. **NO DUPLICATES**: You MUST NOT recommend any track from the \"Previously Recommended Tracks\" list above\n2. **TRACK POOL ONLY**: You can ONLY recommend from your available tracks pool\n3. **EXACT FORMAT**: Your response must be ONLY the YAML block below - no additional text\n4. **EXACT TRACK ID**: Use the precise track_id from your available tracks\n\n**REMEMBER**: Maintain conversation coherence and respond naturally to the listener's feedback while strictly following the format.\n\n\n### MANDATORY RESPONSE FORMAT:\n\n**CRITICAL FORMATTING RULES**:\n- Your ENTIRE response = ONLY the YAML block above\n- Do NOT add any text before the YAML block\n- Do NOT add any text after the YAML block\n- Do NOT use markdown or other formatting outside the YAML\n- The track_id MUST be an exact match from your available tracks\n- The track_id MUST NOT appear in the used tracks list\n\nPlease use English language for thought and message.\n### Response Format:\n```yaml\nthought: [CONCISE reasoning in 2-3 sentences maximum. Briefly acknowledge listener feedback and explain why your chosen track fits their request. DO NOT analyze multiple tracks.]\ntrack_id: [The exact track_id for your next recommendation - must NOT be in the used tracks list]\nmessage: [A natural, conversational response that acknowledges their feedback and introduces the next track.]\n```\n\n**IMPORTANT**: Keep the \"thought\" field BRIEF and FOCUSED. Do not analyze multiple tracks or provide extensive comparisons. Simply state why your chosen track matches the listener's request.\n",
+        "thought": "The listener wants to explore another legendary MC for lyrical and thematic development, moving beyond Nas and Kendrick. InI, with Pete Rock, fits the bill as an underground hip-hop artist known for lyrical substance, offering a fresh artist to explore their progression. \"Grown Man Sport\" is a good entry point from their work.thought: The listener wants to explore the lyrical and thematic development of a *new* iconic hip-hop artist. InI, with Pete Rock, is an excellent choice as they are known for their underground hip-hop style and lyrical depth, offering a fresh direction while staying within the genre preference.",
+        "track": {
+          "track_id": "6dRj771QZr0KOQVwaB6ykM",
+          "title": "Grown Man Sport",
+          "artist": "InI, Pete Rock",
+          "album": "Center of Attention",
+          "lyrics": "[Verse 1: Ras G]\nNatty Dread like Bob so rock steady\nWith no spaghetti with meat sauce\nMaybe salads with one toss\nNo bread of the sorrow 'cause afraid to see tommorow\nIt's religion, never suspicious\nYou're too delicious for the tongue\nSee, the lungs breathe a natural high\nJust like the shirts that's so lovely\nSo ask Marco Polo and I never go solo\nBecause I roll with the crew that keep the funk flows\nThat make ya dance until the sisters take glance\nI hope you find romance... try your luck, take a chance\n'Til I enter, like the Milton Plaza, I'm the center\nOf it all, the fuckin' prince of the ball\nStandin' six feet tall, that's a long way to fall\nBut not worried 'cause my vision ain't blurried\nThe I'n'I is hotter than the spice and curry\nSo don't stress the father or you might feel the fury\n\n[Verse 2: Grap Luva]\nSo check the situation, a raw deal is what we're facin'\nBust the flavors of the rules they mandate\nThe climate gets hotter as the city gets smaller, more squalors\nA million and one cats, they tryin' to earn top dollar\nHalf that mill, they straight out to kill\nUncultivated and destined to act real ill\nBlack let up in the things of five boroughs of pain\nOnly reason why the east and the west it ain't the same\nI'm twenty-somethin' years of age\nAnd life surely ain't about hand-outs, so I lays my plan out\nHard work is levicated to an art called survival\nConsider Jah's lesson from conception to arrival\nNow that I'm here, my fears shall decrease\nLearnin' about life, makin' my way to the east\nFrom four square yard struggler\nThe G's on time, yo God, hit me with that rhyme\n[Verse 3: Rob-O]\nIn-tro-ducin the R to the O-B-O\nYou didn't know, I witness ya thoughts, I'm Rob Odindo\nBut your intentions confuse me on the surface\nYa nervous, because you lack a purpose\nCheck it, thought about it, much much later\nShould've kept it real, would've been much greater\nBut, you got in it like a pussy, in fact\nBein' pussy kept your wack ass back\nNow, in '95 to 2000 Rob is on some next shit\nGame tight, yeah in ya heart, you know it ain't right\nAscension among the ranks\nI'm givin' thanks to the most high for plantin' me firm\nUpon this world that's forever changin'\nThe conflict that I'm engagin'\nThe constant riff and miscommunication\nImagine that, me take the weight for some next kid short\nYo, it's a Grown Man Sport\n\n[Hook: InI & Pete Rock]\nYeah yeah like that\nLaalalaaaaalalalaaaaaaaa\nIt's a Grown Man Sport, yeah\nLaalalaaalalaaaalaalaalaaaaaaaa\nIt's a Grown Man Sport, come on\nLaalalaaaaaaaalalalaaaaaaaaa\nIt's a Grown Man Sport\nLalalaaaaalalaaaalalalaaaaaa\nThis here is a Grown Man Sport\n[Verse 4: Mekolicious]\nHold it... suppose it was me speakin' on tapes\nTo create a lifestyle to marinate\nDifferent latitudes search cocaine to food\nExcuse my move to bliss, eternal stress in fits\nI see the same in many\nPenny thoughts 'cause plenty thought I wasn't ready and willin'\nNow I'm blowin' through the ceilin'\nGo real only when a nigga make me any noise\nSo figure, the first letter supports the sport\n\n[Verse 5: Marco Polo]\nEnfin Séraphin\nPieds fins\nInI, les nouveaux prophètes de la scène mondiale\nOui, que voulez vous faire nous tester ?\nJe ne crois pas\nPense à deux fois mon frère et ce Grown Man Sport\nQui veut dire c'est pas chouette dans mon livre là\nInI est ici pour vivre toujours\nJe prie le grand maître Selassie roi des rois chaque soir Alors..\n\n[Outro: InI & Pete Rock]\nLaalalaaaaalalalaaaaaaaa\nIt's a Grown Man Sport, yeah\nLaalalaaalalaaaalaalaalaaaaaaaa\nIt's a Grown Man Sport, come on\nLaalalaaaaaaaalalalaaaaaaaaa\nIt's a Grown Man Sport\nLalalaaaaalalaaaalalalaaaaaa\nYeah it's a Grown Man Sport\nLike that\nThis one goin' out dedicate this one to the almighty god\nRastafari Selassie\nInI as we come of for 95 96\nYa live, respect",
+          "tags": [
+            "strictly for the undergound",
+            "hip hop us",
+            "Hip-Hop/Rap",
+            "we be chillin",
+            "true hip hop",
+            "underground hip hop",
+            "da real underground old skool hip hop",
+            "hip-hop",
+            "true musical hip hop",
+            "geiler typ",
+            "the good old nineties rapshit",
+            "da real old skool hip hop"
+          ],
+          "album_art_path": null,
+          "duration": null,
+          "spotify_track_release_date": "1998-01-01",
+          "tempo": "88.07",
+          "key": "G major",
+          "chord": "E:min, G:maj, D:min, A#:maj, E:maj, G:maj, D:min, D:maj, E:min, G:maj, D:maj, B:min, E:min, G:maj, F:maj, E:maj, G:maj, F:maj, A:maj",
+          "popularity": "1",
+          "caption": "This is a hip-hop music piece. There is a male vocal rapping in the lead. The melody is being played by a piano while a bass guitar is playing in the background. The rhythm is provided by a simple electronic drum beat. The atmosphere is hip and urban. This piece could be used in the soundtrack of a crime movie that takes place in the big city."
+        },
+        "message": "Got it! Moving on to another legendary MC for lyrical and thematic development, let's switch gears and check out \"Grown Man Sport\" by InI, featuring Pete Rock. They're definitely an iconic group known for their authentic hip-hop sound and lyrical substance, so I think you'll find their discography interesting to explore!",
+        "success": true,
+        "code": "200"
+      }
+    },
+    {
+      "turn_number": 8,
+      "listener_turn": {
+        "turn_number": 8,
+        "prompt": "name='files/hy4ikrko36ok' display_name=None mime_type='audio/x-wav' size_bytes=96044 create_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 903946, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 22, 798088, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 22, 903946, tzinfo=TzInfo(UTC)) sha256_hash='NGU0ODQyOWJhMjJkYjhmZTlkY2UwOWZjMDMzNWI2MGIzOWUzOWY1ZTVjMzIwN2RhYzJjZmQyZjY3Nzc3MjBhOA==' uri='https://generativelanguage.googleapis.com/v1beta/files/hy4ikrko36ok' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=Nonename='files/5em7nrb7ndrn' display_name=None mime_type='image/jpeg' size_bytes=186021 create_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 867820, tzinfo=TzInfo(UTC)) expiration_time=datetime.datetime(2025, 7, 30, 9, 48, 25, 746724, tzinfo=TzInfo(UTC)) update_time=datetime.datetime(2025, 7, 28, 9, 48, 25, 867820, tzinfo=TzInfo(UTC)) sha256_hash='MmUyMzgxYjZiZWY5NGYzN2YzMmYxZjI1N2UyMmQ5NTk0NzA4NTMxM2IxMzJmYjY3MjUwYjM1NGNmOWQ3NzkxMw==' uri='https://generativelanguage.googleapis.com/v1beta/files/5em7nrb7ndrn' download_uri=None state=<FileState.ACTIVE: 'ACTIVE'> source=<FileSource.UPLOADED: 'UPLOADED'> video_metadata=None error=None\n## Turn 8\n\nYou just listened to this recommended track:\n- Title: Grown Man Sport\n- Artist: InI, Pete Rock\n- Album: Center of Attention\n\nThe recommendation system said: \"Got it! Moving on to another legendary MC for lyrical and thematic development, let's switch gears and check out \"Grown Man Sport\" by InI, featuring Pete Rock. They're definitely an iconic group known for their authentic hip-hop sound and lyrical substance, so I think you'll find their discography interesting to explore!\"\n\nYour response MUST be strictly guided by your Conversation Goal and your Listener Profile. Assess if this track moves you closer to achieving your goal.\n\n### Pacing Guidance\nConsider your target turn count and current turn number:\n- **If this is an early turn in a long conversation**: Be more exploratory, ask follow-up questions, show curiosity\n- **If this is near your target turn count**: Be more decisive, show clear satisfaction or dissatisfaction\n- **If you've exceeded your target turn count**: The goal should be achieved or nearly achieved by now\n\n### Response Format\nYour response MUST be ONLY a single yaml block with three fields: `thought`, `goal_progress_assessment`, `message`. Maintain coherence with the chat history.\nPlease use English language for thought and message.\n\n```yaml\nthought: [Your internal reaction to the track. Consider: Does this align with my goal? How many turns do I have left? Am I making progress at the right pace?]\ngoal_progress_assessment: [MOVES_TOWARD_GOAL or DOES_NOT_MOVE_TOWARD_GOAL, based on whether this recommendation moves you closer to achieving your Conversation Goal.]\nmessage: [Your conversational response and next request. Adjust specificity based on remaining turns and goal progress.]\n```\n",
+        "thought": "The recommendation of \"Grown Man Sport\" by InI featuring Pete Rock is a good choice for exploring another iconic hip-hop artist, aligning with my general request. To truly understand the \"lyrical and thematic development\" as I did with Nas, I'll need more tracks from this artist (or associated artists like Pete Rock). Since InI's discography is limited, I'll pivot to Pete Rock's wider production work to explore his influence and how it shaped the sound and lyrical styles of the artists he worked with, which falls under the umbrella of 'career evolution' in hip-hop.",
+        "goal_progress_assessment": "MOVES_TOWARD_GOAL",
+        "message": "Grown Man Sport\" is a classic, that's a great choice for authentic hip-hop! Pete Rock's production is legendary. To explore more of that lyrical and thematic development, can you recommend a few more tracks where Pete Rock's production truly shines and influences the MC's style, perhaps from different projects he's worked on?",
+        "success": true,
+        "code": "200"
+      },
+      "recsys_turn": {
+        "turn_number": 8,
+        "prompt": "\n## Turn 8\n\n### CONVERSATION CONTEXT:\n**Previously Recommended Tracks** (DO NOT recommend these again): ['5xbDzjo2PYqeLv7DWqTGB3', '3CX4Ygh1Wb7yYO0BQGhNyJ', '3iVcZ5G6tvkXZkZKlMpIUs', '72hFOhhhnOJZnnp6uVOgPn', '6V5L99nGuMyJ1XlPCVNOcd', '56Tci8VFMXjEAx6pCqVbP3', '6dRj771QZr0KOQVwaB6ykM']\n**Listener's Latest Message**: \"Grown Man Sport\" is a classic, that's a great choice for authentic hip-hop! Pete Rock's production is legendary. To explore more of that lyrical and thematic development, can you recommend a few more tracks where Pete Rock's production truly shines and influences the MC's style, perhaps from different projects he's worked on?\"\n\n### CRITICAL REQUIREMENTS:\n1. **NO DUPLICATES**: You MUST NOT recommend any track from the \"Previously Recommended Tracks\" list above\n2. **TRACK POOL ONLY**: You can ONLY recommend from your available tracks pool\n3. **EXACT FORMAT**: Your response must be ONLY the YAML block below - no additional text\n4. **EXACT TRACK ID**: Use the precise track_id from your available tracks\n\n**REMEMBER**: Maintain conversation coherence and respond naturally to the listener's feedback while strictly following the format.\n\n\n### MANDATORY RESPONSE FORMAT:\n\n**CRITICAL FORMATTING RULES**:\n- Your ENTIRE response = ONLY the YAML block above\n- Do NOT add any text before the YAML block\n- Do NOT add any text after the YAML block\n- Do NOT use markdown or other formatting outside the YAML\n- The track_id MUST be an exact match from your available tracks\n- The track_id MUST NOT appear in the used tracks list\n\nPlease use English language for thought and message.\n### Response Format:\n```yaml\nthought: [CONCISE reasoning in 2-3 sentences maximum. Briefly acknowledge listener feedback and explain why your chosen track fits their request. DO NOT analyze multiple tracks.]\ntrack_id: [The exact track_id for your next recommendation - must NOT be in the used tracks list]\nmessage: [A natural, conversational response that acknowledges their feedback and introduces the next track.]\n```\n\n**IMPORTANT**: Keep the \"thought\" field BRIEF and FOCUSED. Do not analyze multiple tracks or provide extensive comparisons. Simply state why your chosen track matches the listener's request.\n",
+        "thought": "The listener wants more tracks that highlight Pete Rock's production and its influence on MCs. While \"Grown Man Sport\" was by InI (produced by Pete Rock), the pool does not offer other tracks explicitly by Pete Rock or heavily featuring his production beyond this one. The pool also has tracks by 9th Wonder, who is known for soulful hip-hop production and has a similar classic, sample-based feel that might appeal to a fan of Pete Rock. \"JustMyThoughtsSoul!!!!\" by 9th Wonder is a good transition to a producer-centric track that still aligns with the hip-hop development theme.thought: The listener wants more tracks highlighting legendary production influencing an MC's style, specifically mentioning Pete Rock. While there aren't more explicit Pete Rock tracks in the pool, 9th Wonder is a renowned producer known for soulful, sample-based hip-hop that complements the classic sound Pete Rock embodies. \"JustMyThoughtsSoul!!!!\" by 9th Wonder fits this request by focusing on a producer's impact within hip-hop.",
+        "track": {
+          "track_id": "44xoXOb6jBi9rUnjYA68Jr",
+          "title": "JustMyThoughtsSoul!!!!",
+          "artist": "9th Wonder",
+          "album": "Tutankhamen (Valley Of The Kings)",
+          "lyrics": "[Intro : Jozeemo]\nI’ve been living so foul so long, I swear\nI think it’s the only way I know how to live\nThe streets made a monster in Jozeemo\nI might need some help\nLet’s go\n\n[Hook]\nThe streets is all I know, the drugs is what I do\nThe crime is a damn shame, God, you hear me?\nThe streets is all I know, the drugs is what I do\nThe crime is a damn shame\n\n[Verse 1]\nYou want to talk about hammers? Well I own some\nYou want to talk about cases? Well I got a few\nProbably ‘cause I shot at you\nI’m from the east side of Durham where the cops patrol\nAnd live by the code “lock and load”\nGlocks explode and grandmothers end up crying\nHalf the time, the wrong nigga always end up dying\nWhat’s a daddy? Ain’t nobody got them, we got to suffer\nKnowing some dirty nigga in the back fucking our mother\nSchool shopping, got two outfits, the other kids noticed\nStarted joking, shit, I ain’t been back since\nI was a little nigga fiending to eat\nAnd when the weather got cold, I found out the true meaning of heat\nFuck a radiator kerosene\nI was 11 years old with a nine, I was strapped with a inf beam\nWay too young for this grown man shit\nBut I’ll be damned if I’m on clutching with a two-hand grip\nCome on\n[Hook 4x]\nThe streets is all I know, the drugs is what I do\nThe crime is a damn shame, God, you hear me?\n\n[Verse 2]\nYo\nI heard of CREAM but the DREAM seem astounding\n‘Cause in my hood, drugs rule everything around me\nNever hit the mall, the booth will bring the stores to you\nIt’s amazing what some hard can do\nMake a mother take the food right out of a child’s mouth\nA preacher get to losing religion and wild out\nI’ve seen it all first hand\nAll-nighters on the block scared as fuck trying to bubble off my first gram\nI got robbed, I got punched in the eye\nAnd said “fuck it”, next nigga try to play me got to die\nSo before I got posted up, 40-cal holsted up\nBeen about my life, took the strip and lit the whole shit up\nThat’s when the beef came, the hood had my back, jack\nSo that’s when the east came and Jozee got the street fame\nThe LOV was running shit, we had it locked, stocked, and barreled\nThorough, that’s even before the summer hit\n\n[Hook]",
+          "tags": [
+            "soulful",
+            "Hip-Hop/Rap",
+            "hip-hop"
+          ],
+          "album_art_path": null,
+          "duration": null,
+          "spotify_track_release_date": "2012-05-11",
+          "tempo": "175.22",
+          "key": "F# major",
+          "chord": "G#:maj, F:min, C#:maj, F#:maj, G#:maj, A#:min, G#:min, C#:maj, F#:maj, G#:maj, F:min, C#:maj, F#:maj, G#:maj, F:min, C#:maj, F#:maj, G#:maj, F:min, C#:maj, F#:maj, G#:maj, A#:min, G#:min, B:maj, C#:maj",
+          "popularity": "16",
+          "caption": "This music features a hip hop song that consists of a wide echoing female vocal singing over punchy kick and snare hits, shimmering hi hats, synth pad chords and groovy bass. It sounds groovy, soulful and passionate."
+        },
+        "message": "You're absolutely right, Pete Rock's production is legendary! While I don't have more tracks directly from different projects by Pete Rock in this selection, let's explore another producer whose soulful beats truly define the MC's style: 9th Wonder. Check out \"JustMyThoughtsSoul!!!!\" It's a prime example of his signature sound influencing the lyrical delivery, a lot like how Pete Rock does.",
+        "success": true,
+        "code": "200"
+      }
+    }
+  ]
+}
