@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TalkPlayData 2 - Raw JSON Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        .nav-bar {
+            background-color: white;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        
+        .nav-bar a {
+            color: #444;
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            margin: 0 0.3rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+        
+        .nav-bar a:hover {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+        
+        .nav-bar a.active {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+
+        .content {
+            margin-top: 50px;
+            padding: 20px;
+        }
+        
+        .data-browser {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .user-session {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        
+        .json-files {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .file-item {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+        
+        .file-item h4 {
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .file-item h4 a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .file-item h4 a:hover {
+            text-decoration: underline;
+        }
+        
+        .main-file {
+            border: 2px solid #007bff;
+            background-color: #f8f9ff;
+        }
+        
+        .main-file h4 a {
+            color: #007bff;
+            font-weight: 600;
+        }
+        
+        .secondary-files-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .secondary-file {
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+            opacity: 0.8;
+            flex: 1;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        
+        .secondary-file h4 {
+            font-size: 0.8rem;
+            margin: 0 0 0.25rem 0;
+        }
+        
+        .secondary-file h4 a {
+            color: #4a90e2;
+            font-weight: 400;
+        }
+        
+        .secondary-file p {
+            font-size: 0.7rem;
+            color: #888;
+            margin: 0;
+        }
+        
+        .json-header {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .json-display {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .json-controls {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .json-controls button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .json-controls button:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .json-controls button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        
+        .collapsible {
+            cursor: pointer;
+        }
+        
+        .collapsible:hover {
+            background-color: #e9ecef;
+        }
+        
+        .collapsible-content {
+            display: none;
+            padding-left: 2rem;
+        }
+        
+        .collapsible-content.expanded {
+            display: block;
+        }
+        
+        .toggle-icon {
+            display: inline-block;
+            width: 1rem;
+            text-align: center;
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .json-key {
+            color: #0066cc;
+            font-weight: 500;
+        }
+        
+        .json-value {
+            color: #333;
+        }
+        
+        .json-info {
+            color: #666;
+            font-size: 0.8em;
+            margin-left: 0.5rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 0.5rem 1rem;
+            color: #444;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            transition: all 0.2s ease;
+        }
+        
+        .back-link:hover {
+            color: #000;
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+            text-decoration: none;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+        
+        .error {
+            color: #dc3545;
+            padding: 1rem;
+            border: 1px solid #dc3545;
+            border-radius: 4px;
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="index.html#demo">TalkPlay 1</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#team">Team</a>
+        <a href="talkplaydata2.html" class="active">TalkPlayData 2</a>
+    </div>
+    
+    <div class="content">
+        <div class="container pt-5 shadow p-5 mb-5 bg-white rounded">
+            <h2>TalkPlayData 2</h2>
+            <p class="text-muted mb-4">Raw JSON data from conversational music recommendation sessions</p>
+            
+            <div class="alert alert-info" role="alert">
+                <h5>📄 Submitted to RecSys 2025 Workshop</h5>
+                <p class="mb-2">This is a demo page for our <strong>RecSys 2025 Workshop paper</strong>: <em>"TalkPlayData 2: Synthetic Data for Trimodal and Conversational Music Recommendation"</em>.</p>
+                <p class="mb-0">In this page, we currently show <strong>3 data points from test sets as a preview</strong>. We already have <strong>1,000 data points for test-set</strong>, and we plan to release <strong>over 50,000 conversations for training set</strong>. We will release the dataset and arXiv the paper once the paper review is done.</p>
+            </div>
+            
+            <div class="text-center mb-4">
+                <img src="static/talkplaydata2/TalkPlayData_2.jpg" alt="TalkPlayData 2 Pipeline" class="img-fluid" style="max-width: 100%; height: auto;">
+                <p class="text-muted mt-2"><small>Pipeline for generating conversational music recommendation data</small></p>
+            </div>
+            
+            <div class="data-browser">
+                <div id="sessions-container">
+                    <div class="loading">Loading conversations...</div>
+                </div>
+                
+                <div id="json-viewer" style="display: none">
+                    <div class="json-header">
+                        <a href="#" onclick="showSessionsList()" class="back-link">← Back to sessions</a>
+                        <h3 id="current-file-name"></h3>
+                    </div>
+                    <div class="json-controls">
+                        <button onclick="toggleAllJson()" id="toggle-all-btn">Expand All</button>
+                        <span id="json-info" class="text-muted"></span>
+                    </div>
+                    <pre id="json-content" class="json-display"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Define available sessions - update this when you add new sessions
+        const AVAILABLE_SESSIONS = [
+            { userId: '643', date: '2019-12-14' },
+            { userId: '798', date: '2019-12-08' },
+            { userId: '2907', date: '2020-01-30' }
+        ];
+
+        // Function to load and display all sessions
+        async function loadAllSessions() {
+            try {
+                const sessionsContainer = document.getElementById('sessions-container');
+                sessionsContainer.innerHTML = '<div class="loading">Loading conversations...</div>';
+                
+                let sessionsHTML = '';
+                let availableSessions = 0;
+                
+                for (const session of AVAILABLE_SESSIONS) {
+                    const sessionPath = `static/talkplaydata2/conversations/${session.userId}/${session.date}`;
+                    
+                    // Check if chat.json exists for this session
+                    try {
+                        const response = await fetch(`${sessionPath}/chat.json`);
+                        if (response.ok) {
+                            availableSessions++;
+                            sessionsHTML += `
+                                <div class="user-session">
+                                    <h3>User Session: ${session.userId} (${session.date})</h3>
+                                    <div class="json-files">
+                                        <div class="file-item main-file">
+                                            <h4><a href="#" onclick="loadJsonFile('${sessionPath}/chat.json', 'chat.json', '${session.userId}', '${session.date}')">chat.json</a></h4>
+                                            <p class="text-muted">Conversation data - most important for training conversational music recommendation systems</p>
+                                        </div>
+                                        <div class="secondary-files-container">
+                                            <div class="secondary-file">
+                                                <h4><a href="#" onclick="loadJsonFile('${sessionPath}/profiling.json', 'profiling.json', '${session.userId}', '${session.date}')">profiling.json</a></h4>
+                                                <p class="text-muted">User profiling</p>
+                                            </div>
+                                            <div class="secondary-file">
+                                                <h4><a href="#" onclick="loadJsonFile('${sessionPath}/conversation_goal.json', 'conversation_goal.json', '${session.userId}', '${session.date}')">conversation_goal.json</a></h4>
+                                                <p class="text-muted">Goal analysis</p>
+                                            </div>
+                                            <div class="secondary-file">
+                                                <h4><a href="#" onclick="loadJsonFile('${sessionPath}/listener.json', 'listener.json', '${session.userId}', '${session.date}')">listener.json</a></h4>
+                                                <p class="text-muted">Listener profiling</p>
+                                            </div>
+                                            <div class="secondary-file">
+                                                <h4><a href="#" onclick="loadJsonFile('${sessionPath}/recsys.json', 'recsys.json', '${session.userId}', '${session.date}')">recsys.json</a></h4>
+                                                <p class="text-muted">Recsys output</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    } catch (error) {
+                        console.log(`Session ${session.userId}/${session.date} not available`);
+                    }
+                }
+                
+                if (availableSessions === 0) {
+                    sessionsContainer.innerHTML = '<div class="error">No sessions found. Please check the data directory.</div>';
+                } else {
+                    sessionsContainer.innerHTML = sessionsHTML;
+                }
+                
+            } catch (error) {
+                console.error('Error loading sessions:', error);
+                document.getElementById('sessions-container').innerHTML = 
+                    '<div class="error">Error loading sessions. Please try again later.</div>';
+            }
+        }
+
+        // Function to load and display JSON files
+        async function loadJsonFile(filePath, fileName, userId, date) {
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const jsonData = await response.json();
+                
+                // Hide sessions list and show JSON viewer
+                document.getElementById('sessions-container').style.display = 'none';
+                document.getElementById('json-viewer').style.display = 'block';
+                
+                // Update URL
+                history.pushState(null, '', `talkplaydata2.html?user=${userId}&date=${date}&file=${fileName}`);
+                
+                // Display the JSON
+                document.getElementById('current-file-name').textContent = `${userId}/${date}/${fileName}`;
+                displayCollapsibleJson(jsonData);
+                
+            } catch (error) {
+                console.error('Error loading JSON file:', error);
+                alert('Error loading JSON file. Please try again.');
+            }
+        }
+
+        // Function to display JSON with collapsible sections
+        function displayCollapsibleJson(data) {
+            const jsonContent = document.getElementById('json-content');
+            const jsonInfo = document.getElementById('json-info');
+            
+            // Count total items for info display
+            const totalItems = countJsonItems(data);
+            jsonInfo.textContent = `${totalItems} items`;
+            
+            // Create collapsible HTML
+            const html = createCollapsibleHtml(data, 'root');
+            jsonContent.innerHTML = html;
+            
+            // Add click handlers
+            addCollapsibleHandlers();
+        }
+
+        // Function to count JSON items
+        function countJsonItems(obj) {
+            if (Array.isArray(obj)) {
+                return obj.length;
+            } else if (typeof obj === 'object' && obj !== null) {
+                return Object.keys(obj).length;
+            }
+            return 1;
+        }
+
+        // Function to create collapsible HTML
+        function createCollapsibleHtml(data, path) {
+            if (Array.isArray(data)) {
+                return createArrayHtml(data, path);
+            } else if (typeof data === 'object' && data !== null) {
+                return createObjectHtml(data, path);
+            } else {
+                return `<span class="json-value">${JSON.stringify(data)}</span>`;
+            }
+        }
+
+        // Function to create HTML for arrays
+        function createArrayHtml(arr, path) {
+            if (arr.length === 0) {
+                return '<span class="json-value">[]</span>';
+            }
+            
+            let html = '<span class="collapsible" data-path="' + path + '">';
+            html += '<span class="toggle-icon">▶</span>';
+            html += '<span class="json-value">[</span>';
+            html += '<span class="json-info">' + arr.length + ' items</span>';
+            html += '</span>';
+            
+            html += '<div class="collapsible-content" data-path="' + path + '">';
+            arr.forEach((item, index) => {
+                html += '<div>';
+                html += createCollapsibleHtml(item, path + '[' + index + ']');
+                if (index < arr.length - 1) html += ',';
+                html += '</div>';
+            });
+            html += '</div>';
+            html += '<span class="json-value">]</span>';
+            
+            return html;
+        }
+
+        // Function to create HTML for objects
+        function createObjectHtml(obj, path) {
+            const keys = Object.keys(obj);
+            if (keys.length === 0) {
+                return '<span class="json-value">{}</span>';
+            }
+            
+            let html = '<span class="collapsible" data-path="' + path + '">';
+            html += '<span class="toggle-icon">▶</span>';
+            html += '<span class="json-value">{</span>';
+            html += '<span class="json-info">' + keys.length + ' properties</span>';
+            html += '</span>';
+            
+            html += '<div class="collapsible-content" data-path="' + path + '">';
+            keys.forEach((key, index) => {
+                html += '<div>';
+                html += '<span class="json-key">"' + key + '": </span>';
+                html += createCollapsibleHtml(obj[key], path + '.' + key);
+                if (index < keys.length - 1) html += ',';
+                html += '</div>';
+            });
+            html += '</div>';
+            html += '<span class="json-value">}</span>';
+            
+            return html;
+        }
+
+        // Function to add click handlers for collapsible elements
+        function addCollapsibleHandlers() {
+            document.querySelectorAll('.collapsible').forEach(element => {
+                element.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const path = this.getAttribute('data-path');
+                    const content = document.querySelector('.collapsible-content[data-path="' + path + '"]');
+                    const icon = this.querySelector('.toggle-icon');
+                    
+                    if (content.classList.contains('expanded')) {
+                        content.classList.remove('expanded');
+                        icon.textContent = '▶';
+                    } else {
+                        content.classList.add('expanded');
+                        icon.textContent = '▼';
+                    }
+                });
+            });
+        }
+
+        // Function to toggle all JSON sections
+        function toggleAllJson() {
+            const btn = document.getElementById('toggle-all-btn');
+            const contents = document.querySelectorAll('.collapsible-content');
+            const icons = document.querySelectorAll('.toggle-icon');
+            
+            if (btn.textContent === 'Expand All') {
+                contents.forEach(content => content.classList.add('expanded'));
+                icons.forEach(icon => icon.textContent = '▼');
+                btn.textContent = 'Collapse All';
+                btn.classList.add('active');
+            } else {
+                contents.forEach(content => content.classList.remove('expanded'));
+                icons.forEach(icon => icon.textContent = '▶');
+                btn.textContent = 'Expand All';
+                btn.classList.remove('active');
+            }
+        }
+
+
+
+        // Function to show the sessions list
+        function showSessionsList() {
+            document.getElementById('sessions-container').style.display = 'block';
+            document.getElementById('json-viewer').style.display = 'none';
+            history.pushState(null, '', 'talkplaydata2.html');
+        }
+
+        // Handle URL parameters on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const user = urlParams.get('user');
+            const date = urlParams.get('date');
+            const file = urlParams.get('file');
+            
+            if (user && date && file) {
+                loadJsonFile(`static/talkplaydata2/conversations/${user}/${date}/${file}`, file, user, date);
+            } else {
+                loadAllSessions();
+            }
+        });
+    </script>
+</body>
+</html> 
