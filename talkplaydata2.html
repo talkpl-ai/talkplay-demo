@@ -270,17 +270,14 @@
             
             <div class="mb-4">
                 <h3>What is TalkPlayData 2?</h3>
-                <p>We let two LLMs talk to each other about music.</p>
+                <p>We generate <strong>realistic</strong> conversation data for music recommendation research that covers <strong>various conversation scenarios</strong> and involves <strong>multimodal</strong> aspects of music.</p>
+                <p>We achieve it by letting two LLMs talk to each other about music, since LLMs can definitely talk to each other coherently and naturally. But we need grounding music data to make the conversation realistic and relevant to real music items we have. So, we use a listening session dataset to condition the conversation, where each session's tracks become the recommendation pool of the resulting conversation.</p>
                 
-                <p>We use a listening session dataset to condition the conversation. Each session's tracks become the recommendation pool of the resulting conversation.</p>
+                <p>But that's not enough. We also condition the Listener LLM with a conversation goal, which is finetuned based on the recommendation pool, by the Goal LLM. And - to do it better, we also condition the Listener LLM with a Listener Profile, which is based on basic demography and inferred information of the listener.</p>
                 
-                <p>We also condition the Listener LLM with finetuned prompts that have a feasible conversation goal, finetuned by the recommendation pool. These goals are created by the Goal LLM.</p>
-                
-                <p>Based on basic demography and inferred information of the listener, we make a Listener Profile for each conversation. This is shared with the Goal LLM, Listener LLM, and the Recsys LLM.</p>
-                
-                <p>But the conversation goal is shared only with the Listener LLM, which queries and responds to the Recsys LLM to achieve the goal.</p>
-                
-                <p>The Recsys LLM doesn't know the goal, but it knows the recommendation pool. Based on the Listener LLM's messages, it recommends music each turn.</p>
+                <p>Information Imbalance is an important aspect of TalkPlayData 2. This Listener Profile is shared with the Goal LLM, Listener LLM, and the Recsys LLM. However, the conversation goal is shared only with the Listener LLM, which queries and responds to the Recsys LLM to achieve the goal. The Recsys LLM doesn't know the goal, but it knows the recommendation pool and recommends music each turn based on the Listener LLM's messages.</p>
+
+                <p>As a result, this is essentially an agentic pipeline, simulating real-world conversations between a listener and a music recommender.</p>
             </div>
             
             <div class="text-center mb-4">
@@ -290,11 +287,11 @@
             
             <div class="mb-4">
                 <h3>Multimodal and Conversational, in one LLM.</h3>
-                <p>In the TalkPlayData 2 generation pipeline, all the LLMs are multimodal - they can listen to the audio and see images, besides understanding various sub-modalities in text such as lyrics and chords.</p>
+                <p>In our pipeline, all the LLMs are multimodal - they can listen to the audio and see images, besides understanding various sub-modalities in text such as lyrics and chords.</p>
                 
                 <p>Not to mention they're conversational - just like TalkPlay 1, that's why we're using LLMs as a recommendation engine.</p>
                 
-                <p>This is on the right direction of extending the scope of a single model (LLM), as opposed to the existing systems which have different, separate components to handle different modalities, connected non-differentially.</p>
+                <p>This is nicely put along the line of bigger models, and less number of components -- extending the scope of a single model (LLM). An important contrast to the existing systems which have different, separate components to handle different modalities, connected non-differentially.</p>
             </div>
             
             <div class="mb-4">
