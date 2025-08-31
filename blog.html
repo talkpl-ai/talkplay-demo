@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog - TalkPlay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-172BJXXL3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-172BJXXL3Q');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .nav-bar {
+            background-color: white;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        
+        .nav-bar a {
+            color: #444;
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            margin: 0 0.3rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+        
+        .nav-bar a:hover {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+        
+        .nav-bar a.active {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+
+        .content {
+            margin-top: 50px;
+            padding: 20px;
+        }
+        
+        .blog-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .blog-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        
+        .blog-item img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #444;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            color: #000;
+        }
+        
+        .markdown-content {
+            line-height: 1.6;
+        }
+        
+        .markdown-content h1 {
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content ul {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="index.html">TalkPlay 1</a>
+        <a href="talkplaydata2.html">TalkPlayData 2</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="team.html">Team</a>
+    </div>
+    
+    <div class="content">
+        <div id="blog-section" class="blog-list">
+            <!-- Blog posts will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Function to handle section display based on hash
+        function handleHash() {
+            const hash = window.location.hash.slice(1) || '';
+            if (hash.startsWith('blog/')) {
+                const filename = hash.slice(5);
+                loadBlogPost(filename);
+            } else {
+                loadBlogPosts();
+            }
+        }
+        
+        // Function to load and display JSON files
+        async function loadBlogPost(filename) {
+            try {
+                const response = await fetch(`blog/${filename}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const markdown = await response.text();
+                const blogSection = document.getElementById('blog-section');
+                
+                // Update URL without triggering hashchange
+                history.pushState(null, '', `blog.html#blog/${filename}`);
+                
+                blogSection.innerHTML = `
+                    <div class="blog-post">
+                        <a href="blog.html" class="back-link">← Back to posts</a>
+                        <div class="markdown-content">
+                            ${marked.parse(markdown)}
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error loading blog post:', error);
+                document.getElementById('blog-section').innerHTML = '<p>Error loading blog post. Please try again later.</p>';
+            }
+        }
+
+        // Function to create blog list
+        function createBlogList(posts) {
+            const blogSection = document.getElementById('blog-section');
+            blogSection.innerHTML = posts.map(post => `
+                <div class="blog-item" onclick="loadBlogPost('${post.filename}')">
+                    <h2 style="color: #444">${post.title}</h2>
+                    <p style="color: #666; font-size: 0.9em; margin-bottom: 0.5rem;">${post.date}</p>
+                    ${post.thumbnail ? `<img src="${post.thumbnail}" alt="${post.title}">` : ''}
+                    <p>${post.preview}</p>
+                </div>
+            `).join('');
+        }
+
+        // Function to load blog posts
+        async function loadBlogPosts() {
+            try {
+                console.log('Attempting to load blog posts...');
+                const response = await fetch('blog/posts.jsonl');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+                console.log('Loaded posts.jsonl:', text);
+                const posts = JSON.parse(text);
+                
+                // Sort posts by date in descending order (recent first)
+                posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                createBlogList(posts);
+            } catch (error) {
+                console.error('Detailed error loading blog posts:', error);
+                document.getElementById('blog-section').innerHTML = 
+                    `<p>Error loading blog posts. Please try again later.</p>
+                     <p><small>Details: ${error.message}</small></p>`;
+            }
+        }
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHash);
+        
+        // Handle initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            handleHash();
+        });
+    </script>
+</body>
+</html> 

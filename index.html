@@ -59,82 +59,19 @@
             padding: 20px;
         }
         
-        /* Blog list styles */
-        .blog-list {
-            max-width: 800px;
-            margin: 0 auto;
-            display: none;
-        }
-        
-        .blog-item {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .blog-item img {
-            max-width: 200px;
-            height: auto;
-        }
-        
-        /* Demo section */
-        #demo-section {
-            display: block;
-        }
-        
-        /* Blog post styles */
-        .blog-post {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #444;
-            text-decoration: none;
-        }
-        
-        .back-link:hover {
-            color: #000;
-        }
-        
-        .markdown-content {
-            line-height: 1.6;
-        }
-        
-        .markdown-content h1 {
-            margin-bottom: 1rem;
-        }
-        
-        .markdown-content h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .markdown-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .markdown-content ul {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-        }
+
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
     <div class="nav-bar">
-        <a href="#demo" id="demo-nav" class="active">TalkPlay 1</a>
-        <a href="talkplaydata2.html" id="data-nav">TalkPlayData 2</a>
-        <a href="#blog" id="blog-nav">Blog</a>
-        <a href="#team" id="team-nav">Team</a>
+        <a href="index.html" class="active">TalkPlay 1</a>
+        <a href="talkplaydata2.html">TalkPlayData 2</a>
+        <a href="blog.html">Blog</a>
+        <a href="team.html">Team</a>
     </div>
     
     <div class="content">
-        <div id="demo-section">
-            <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+        <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
                 <div class="text-center">
                     <h1 class="title is-1 publication-title">TalkPlay: Multimodal Music Recommendation <br> with Large Language Models</h1>        
 
@@ -232,48 +169,8 @@
                 </div>
             <p>This demo page is inspired by <a href="https://google-research.github.io/seanet/musiclm/examples/" target="_blank">MusicLM's demo page</a>.</p>
             </div>
-        </div>
         
-        <div id="team-section" style="display: none">
-            <div class="container pt-5 shadow p-5 mb-5 bg-white rounded">
-                <h2 class="mb-3">talkpl.ai</h2>
-                <p class="text-muted">Founded in 2024 after years of research collaboration between Keunwoo and Seungheon (since 2020). We share a deep passion for shaping a future where music discovery becomes unbelievably advanced.</p>
-                <hr>
-                <div class="row mb-5">
-                    <div class="col-md-12 mb-4">
-                                                                <h3><a href="https://keunwoochoi.github.io/" target="_blank">Keunwoo Choi</a></h3>
-                        <p class="text-muted">Founding member of talkpl.ai</p>
-                        <p class="text-muted">Senior Principal ML Scientist at Genentech</p>
-                        <p>Expert in music AI and large language models, with extensive industry experience in music tech and AI:</p>
-                        <ul>
-                            <li>Currently leading LLM development at Genentech</li>
-                            <li>Former Research Scientist at Spotify and ByteDance AI Lab</li>
-                            <li>Creator of Kapre (Keras Audio Preprocessing)</li>
-                            <li>Best Paper Award at ISMIR 2017</li>
-                            <li>PhD in Music AI from Queen Mary University of London</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-md-12">
-                                                                <h3><a href="https://seungheondoh.github.io/#/" target="_blank">Seungheon Doh</a></h3>
-                        <p class="text-muted">Founding member of talkpl.ai</p>
-                        <p class="text-muted">Postdoctoral Researcher at KAIST</p>
-                        <p>Specialized in connecting music with natural language and multimodal AI:</p>
-                        <ul>
-                            <li>Research focus on music-language understanding and generation</li>
-                            <li>Experience at Adobe, Chartmetric, ByteDance/TikTok</li>
-                            <li>PhD from KAIST in Music and Audio Computing</li>
-                            <li>Multiple publications on music-language models at top conferences</li>
-                            <li>Awarded KAIST post-doctoral Fellowship for LLM4Music research</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         
-        <div id="blog-section" class="blog-list" style="display: none">
-            <!-- Blog posts will be dynamically loaded here -->
-        </div>
     </div>
 
     <script src="./static/example/short.js"></script>
@@ -522,107 +419,10 @@
         }
       }
 
-      // Function to handle section display based on hash
-      function handleHash() {
-        const hash = window.location.hash.slice(1) || 'demo'; // Remove # and default to 'demo'
-        showSection(hash);
-      }
-
-      // Update showSection to handle browser history
-      function showSection(section) {
-        document.getElementById('demo-section').style.display = section === 'demo' ? 'block' : 'none';
-        document.getElementById('team-section').style.display = section === 'team' ? 'block' : 'none';
-        document.getElementById('blog-section').style.display = section === 'blog' ? 'block' : 'none';
-        
-        // Update active states
-        document.getElementById('demo-nav').classList.toggle('active', section === 'demo');
-        document.getElementById('team-nav').classList.toggle('active', section === 'team');
-        document.getElementById('blog-nav').classList.toggle('active', section === 'blog');
-        
-        if (section === 'blog') {
-          loadBlogPosts();
-        }
-      }
-      
-      // Update loadBlogPost to handle URLs for individual posts
-      async function loadBlogPost(filename) {
-        try {
-          const response = await fetch(`blog/${filename}`);
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const markdown = await response.text();
-          const blogSection = document.getElementById('blog-section');
-          
-          // Update URL without triggering hashchange
-          history.pushState(null, '', `#blog/${filename}`);
-          
-          blogSection.innerHTML = `
-            <div class="blog-post">
-                <a href="#blog" class="back-link">← Back to posts</a>
-                <div class="markdown-content">
-                    ${marked.parse(markdown)}
-                </div>
-            </div>
-          `;
-        } catch (error) {
-          console.error('Error loading blog post:', error);
-          document.getElementById('blog-section').innerHTML = '<p>Error loading blog post. Please try again later.</p>';
-        }
-      }
-
-      // Listen for hash changes
-      window.addEventListener('hashchange', handleHash);
-      
       // Handle initial load
       document.addEventListener('DOMContentLoaded', () => {
-        handleHash();
         loadAndRenderChats();
       });
-
-      // Update blog item click handler
-      function createBlogList(posts) {
-        const blogSection = document.getElementById('blog-section');
-        blogSection.innerHTML = posts.map(post => `
-          <div class="blog-item" onclick="loadBlogPost('${post.filename}')" style="cursor: pointer">
-              <h2 style="color: #444">${post.title}</h2>
-              <p style="color: #666; font-size: 0.9em; margin-bottom: 0.5rem;">${post.date}</p>
-              ${post.thumbnail ? `<img src="${post.thumbnail}" alt="${post.title}">` : ''}
-              <p>${post.preview}</p>
-          </div>
-        `).join('');
-      }
-
-      // Update loadBlogPosts to handle direct URLs to posts
-      async function loadBlogPosts() {
-        try {
-          console.log('Attempting to load blog posts...');
-          const response = await fetch('blog/posts.jsonl');
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const text = await response.text();
-          console.log('Loaded posts.jsonl:', text);
-          const posts = JSON.parse(text);
-          
-          // Sort posts by date in descending order (recent first)
-          posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-          
-          // Check if we're trying to load a specific post
-          const hash = window.location.hash.slice(1);
-          if (hash.startsWith('blog/')) {
-            const filename = hash.slice(5);
-            await loadBlogPost(filename);
-          } else {
-            createBlogList(posts);
-          }
-        } catch (error) {
-          console.error('Detailed error loading blog posts:', error);
-          document.getElementById('blog-section').innerHTML = 
-            `<p>Error loading blog posts. Please try again later.</p>
-             <p><small>Details: ${error.message}</small></p>`;
-        }
-      }
     </script>
   </body>
 </html>
